@@ -31,7 +31,7 @@ export default function Home() {
             }}
           />
         </div>
-        <p>test text</p>
+        <p>test test</p>
       </main>
     </div>
   );
