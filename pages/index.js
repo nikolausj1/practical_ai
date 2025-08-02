@@ -31,7 +31,7 @@ export default function Home() {
             }}
           />
         </div>
-        <p>test test</p>
+        <p>test test test</p>
       </main>
     </div>
   );
