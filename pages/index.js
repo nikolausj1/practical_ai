@@ -12,13 +12,23 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <div className={styles.logoContainer}>
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          minHeight: '80vh'
+        }}>
           <Image
             src="/logoStacked.png"
-            alt="Practical AI Logo"
+            alt="Practical AI Toolkit Logo"
             width={500}
             height={300}
             priority
+            style={{
+              maxWidth: '400px',
+              width: '80%',
+              height: 'auto',
+            }}
           />
         </div>
       </main>
