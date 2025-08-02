@@ -1,20 +1,16 @@
 
-## Notes / To Do 
-
-
-Three prompt types 
-- System, User, Agent 
-- All three get used each time you send a message 
-- "Great job. Now do the same thing for (new topic)"
 
 
 ---
-## Home / About 
+## Home 
 
+Welcome to the companion site for the Practical AI talk.
 
+This site expands on what was covered in the session. Use it to revisit key ideas, explore practical examples, and try out the tools and frameworks that make AI genuinely useful in your work and life.
 
 
 ---
+
 
 ## What is AI 
 
