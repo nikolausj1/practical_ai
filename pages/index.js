@@ -31,7 +31,7 @@ export default function Home() {
             }}
           />
         </div>
-        <p>test test test</p>
+        <p>Justin Nikolaus</p>
       </main>
     </div>
   );
