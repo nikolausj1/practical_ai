@@ -31,6 +31,7 @@ export default function Home() {
             }}
           />
         </div>
+        <p>test text</p>
       </main>
     </div>
   );
