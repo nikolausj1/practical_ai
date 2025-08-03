@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import Script from 'next/script';
 
 export default function Home() {
+  // Force a new deployment to Vercel
   useEffect(() => {
     // Import our CSS files
     require('../styles/main.css');
