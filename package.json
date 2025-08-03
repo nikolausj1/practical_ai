@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/prepare-static.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -14,7 +15,9 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "css-loader": "^6.8.1",
     "eslint": "^8.50.0",
-    "eslint-config-next": "^14.0.0"
+    "eslint-config-next": "^14.0.0",
+    "style-loader": "^3.3.3"
   }
 }
