@@ -1,0 +1,309 @@
+/* 
+ * Practical AI Toolkit
+ * About Me and About Talk Styles
+ */
+
+/* About Sections Styling */
+.about-section {
+    margin-bottom: 3rem;
+}
+
+/* Profile Area */
+.profile-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .profile-area {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+
+.profile-image {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #0070f3;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+    .profile-image {
+        margin-right: 2rem;
+        margin-bottom: 0;
+    }
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-info h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: #0070f3;
+}
+
+.profile-info p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+/* Bio Section */
+.bio-section {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+.bio-section h3 {
+    margin-top: 0;
+    color: #0070f3;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #eaecef;
+    padding-bottom: 0.5rem;
+}
+
+.bio-section p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+/* Expertise Area */
+.expertise-area {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.expertise-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1.25rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-top: 3px solid #0070f3;
+}
+
+.expertise-card h4 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: #0070f3;
+}
+
+.expertise-card ul {
+    margin: 0;
+    padding-left: 1.25rem;
+}
+
+.expertise-card li {
+    margin-bottom: 0.5rem;
+}
+
+/* Talk Section */
+.talk-info {
+    background-color: #f0f7ff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-left: 4px solid #0070f3;
+}
+
+.talk-info h3 {
+    margin-top: 0;
+    color: #0070f3;
+    margin-bottom: 1rem;
+}
+
+.talk-topics {
+    margin-bottom: 1.5rem;
+}
+
+.topic-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.topic-item {
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+}
+
+.topic-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #e6f2ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.75rem;
+    flex-shrink: 0;
+    color: #0070f3;
+    font-size: 1rem;
+}
+
+.topic-text {
+    font-size: 0.95rem;
+}
+
+/* Audience Section */
+.audience-section {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+.audience-section h3 {
+    margin-top: 0;
+    color: #0070f3;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #eaecef;
+    padding-bottom: 0.5rem;
+}
+
+.audience-groups {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.audience-group {
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    padding: 1rem;
+    border-left: 3px solid #0070f3;
+}
+
+.audience-group h4 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.audience-group p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Booking Section */
+.booking-section {
+    background-color: #f0f7ff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    margin-top: 2rem;
+    border: 1px solid #d1e6ff;
+}
+
+.booking-section h3 {
+    margin-top: 0;
+    color: #0070f3;
+    margin-bottom: 1rem;
+}
+
+.booking-section p {
+    max-width: 600px;
+    margin: 0 auto 1.5rem auto;
+}
+
+.booking-button {
+    display: inline-block;
+    background-color: #0070f3;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+    margin-bottom: 1rem;
+}
+
+.booking-button:hover {
+    background-color: #0056b3;
+    text-decoration: none;
+    color: white;
+}
+
+.contact-info {
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.contact-info a {
+    color: #0070f3;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f0f7ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0070f3;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: 1px solid #d1e6ff;
+}
+
+.social-link:hover {
+    background-color: #0070f3;
+    color: white;
+    transform: translateY(-3px);
+}
+
+.social-icon {
+    font-size: 1.25rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .expertise-area,
+    .topic-list,
+    .audience-groups {
+        grid-template-columns: 1fr;
+    }
+    
+    .profile-area {
+        text-align: center;
+    }
+    
+    .booking-section {
+        padding: 1.25rem;
+    }
+}

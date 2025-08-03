@@ -1,13 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
-  
-  // Properly handle CSS imports
-  transpilePackages: [],
-  
-  // Configure asset paths
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/' : '',
   
   // Static HTML export configuration
   output: 'export',
@@ -17,21 +10,11 @@ const nextConfig = {
     unoptimized: true,
   },
   
-  // Enable SWC for faster builds
-  experimental: {
-    swcTraceProfiling: true,
-  },
+  // Trailingslash is recommended for static exports
+  trailingSlash: true,
   
-  // Webpack configuration to handle our CSS and JS files
-  webpack: (config, { isServer }) => {
-    // Add support for importing CSS
-    config.module.rules.push({
-      test: /\.css$/,
-      use: ['style-loader', 'css-loader'],
-    });
-    
-    return config;
-  },
+  // Configure base path if necessary
+  // basePath: '',
 }
 
 module.exports = nextConfig

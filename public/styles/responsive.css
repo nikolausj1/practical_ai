@@ -1,0 +1,394 @@
+/* 
+ * Practical AI Toolkit
+ * Responsive Design Styles
+ */
+
+/* Base Responsive Layout */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+    
+    /* Slightly reduce font sizes for mid-sized screens */
+    h1 {
+        font-size: 2.25rem;
+    }
+    
+    h2 {
+        font-size: 1.75rem;
+    }
+}
+
+/* Tablet Layout */
+@media (max-width: 992px) {
+    .container {
+        max-width: 720px;
+    }
+    
+    /* Adjust grid layouts */
+    .tips-grid,
+    .use-cases-grid,
+    .image-prompt-framework,
+    .combination-examples,
+    .platform-tips,
+    .troubleshooting-grid,
+    .practice-cards,
+    .takeaways-grid,
+    .expertise-area {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Adjust two-column layouts */
+    .feature-box.with-image {
+        flex-direction: column;
+    }
+    
+    .feature-content,
+    .feature-image {
+        width: 100%;
+    }
+    
+    .feature-image {
+        margin-top: 1.5rem;
+    }
+    
+    /* Profile area adjustments */
+    .profile-area {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .profile-image {
+        margin-right: 0;
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Mobile Layout */
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+        padding: 0 1.25rem;
+    }
+    
+    /* Header adjustments */
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    #top-nav ul {
+        gap: 1rem;
+    }
+    
+    /* Adjust all grid layouts to single column */
+    .tips-grid,
+    .use-cases-grid,
+    .image-prompt-framework,
+    .combination-examples,
+    .platform-tips,
+    .troubleshooting-grid,
+    .practice-cards,
+    .takeaways-grid,
+    .cheatsheet,
+    .expertise-area,
+    .topic-list,
+    .audience-groups,
+    .frameworks-grid,
+    .tool-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Typography adjustments */
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    h3 {
+        font-size: 1.25rem;
+    }
+    
+    .subsection {
+        padding: 1.25rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Mobile Navigation Specific Styles */
+    /* Hide sidebar by default on mobile */
+    #sidebar {
+        position: fixed;
+        left: -280px;
+        top: 0;
+        width: 280px;
+        height: 100%;
+        z-index: 1000;
+        background-color: #fff;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        transition: left 0.3s ease;
+        overflow-y: auto;
+    }
+    
+    #sidebar.active {
+        left: 0;
+    }
+    
+    /* Mobile toggle button */
+    .mobile-toggle {
+        display: block;
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        z-index: 1001;
+        background-color: #0070f3;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        padding: 0;
+    }
+    
+    .mobile-toggle span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background-color: white;
+        margin: 5px auto;
+        transition: all 0.3s ease;
+    }
+    
+    /* Hamburger to X transformation */
+    .mobile-toggle.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+    
+    .mobile-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .mobile-toggle.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+    
+    /* Adjust main content when sidebar is active */
+    main {
+        transition: margin-left 0.3s ease;
+        width: 100%;
+    }
+    
+    main.shifted {
+        margin-left: 280px;
+    }
+    
+    /* Overlay when sidebar is active */
+    .sidebar-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+    
+    .sidebar-overlay.active {
+        display: block;
+    }
+    
+    /* Hide collapse button on mobile */
+    .collapse-btn {
+        display: none;
+    }
+    
+    /* Touch-friendly adjustments */
+    .sidebar-header {
+        padding: 1.5rem 1rem;
+    }
+    
+    #sidebar nav ul li a {
+        padding: 1rem;
+        display: block;
+    }
+    
+    /* Make buttons more touch-friendly */
+    button, 
+    .btn,
+    .filter-btn,
+    .copy-tip-btn,
+    .copy-case-btn,
+    .copy-prompt-btn,
+    .preview-toggle,
+    .expand-tip-btn,
+    .show-more-btn,
+    .toggle-btn,
+    .social-link,
+    .booking-button {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 12px 16px;
+        margin: 5px 0;
+    }
+    
+    /* Specific component adjustments */
+    .tip-card, 
+    .use-case-card, 
+    .framework-block, 
+    .combo-example, 
+    .expertise-card, 
+    .practice-card {
+        margin-bottom: 1rem;
+    }
+    
+    .prompt-example,
+    .image-example, 
+    .sketch-example {
+        padding: 1rem;
+    }
+    
+    .framework-component {
+        margin-bottom: 1rem;
+    }
+    
+    .example-content pre {
+        max-width: 100%;
+        overflow-x: auto;
+    }
+    
+    .prompt-example-container,
+    .framework-container {
+        overflow-x: auto;
+    }
+    
+    /* Social links need more space on touch devices */
+    .social-links {
+        gap: 1.5rem;
+    }
+    
+    .social-link {
+        width: 50px;
+        height: 50px;
+    }
+    
+    /* Improve readability of tables on small screens */
+    table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+    }
+}
+
+/* Small Mobile Layout */
+@media (max-width: 576px) {
+    /* Further reduce spacing and font sizes */
+    .container {
+        padding: 0 1rem;
+    }
+    
+    h1 {
+        font-size: 1.35rem;
+    }
+    
+    h2 {
+        font-size: 1.25rem;
+    }
+    
+    h3 {
+        font-size: 1.15rem;
+    }
+    
+    p, li {
+        font-size: 0.95rem;
+    }
+    
+    /* Hide or simplify some UI elements */
+    #top-nav ul li:not(:last-child) {
+        display: none;
+    }
+    
+    /* Compact the header */
+    header {
+        padding: 0.75rem 0;
+    }
+    
+    /* Adjust content sections */
+    .subsection {
+        padding: 1rem;
+    }
+    
+    .profile-image {
+        width: 180px;
+        height: 180px;
+    }
+    
+    /* Adjust spacing for smaller screens */
+    .section-intro {
+        margin-bottom: 1rem;
+    }
+    
+    /* Simplify complex layouts */
+    .framework-component .component-content {
+        padding: 0.75rem;
+    }
+    
+    .framework-example pre code {
+        font-size: 0.85rem;
+    }
+    
+    /* Make code sections scrollable */
+    pre {
+        padding: 0.75rem;
+    }
+}
+
+/* Landscape orientation adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+    /* Adjust sidebar scrolling for landscape */
+    #sidebar {
+        padding-bottom: 6rem;
+    }
+    
+    /* Adjust header for landscape */
+    header {
+        padding: 0.5rem 0;
+    }
+    
+    header h1 {
+        font-size: 1.25rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    #sidebar, 
+    header, 
+    footer, 
+    .mobile-toggle,
+    .sidebar-overlay {
+        display: none;
+    }
+    
+    main {
+        margin-left: 0;
+    }
+    
+    .container {
+        max-width: 100%;
+    }
+    
+    /* Show all sections when printing */
+    .content-section {
+        display: block !important;
+        page-break-after: always;
+    }
+    
+    /* Remove unnecessary visual elements */
+    .btn, 
+    button, 
+    .mobile-toggle, 
+    .social-links {
+        display: none;
+    }
+}

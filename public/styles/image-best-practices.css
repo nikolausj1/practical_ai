@@ -1,0 +1,566 @@
+/* 
+ * Practical AI Toolkit
+ * Image Generation and Best Practices Styles
+ */
+
+/* Image Prompt Framework */
+.image-prompt-framework {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+}
+
+.framework-block {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1.25rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-top: 3px solid #0070f3;
+}
+
+.framework-block h4 {
+    margin-top: 0;
+    color: #0070f3;
+    margin-bottom: 0.75rem;
+}
+
+.example-block {
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    padding: 0.75rem;
+    margin-top: 0.75rem;
+}
+
+.example-label {
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.example-list {
+    margin: 0;
+    padding-left: 1.25rem;
+}
+
+.example-list li {
+    margin-bottom: 0.35rem;
+    font-size: 0.9rem;
+}
+
+/* Image Examples */
+.image-example-container {
+    margin: 2rem 0;
+}
+
+.image-example {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem;
+}
+
+.image-example.enhanced {
+    border-left: 4px solid #0070f3;
+}
+
+.prompt-section {
+    margin-bottom: 1rem;
+}
+
+.prompt-label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.prompt-text {
+    background-color: #f8f9fa;
+    padding: 0.75rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    position: relative;
+}
+
+.copy-prompt-btn {
+    background-color: #f0f4f8;
+    border: none;
+    border-radius: 4px;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #0070f3;
+    margin-top: 0.75rem;
+}
+
+.copy-prompt-btn:hover {
+    background-color: #e0e7f0;
+}
+
+.image-result {
+    margin-top: 1rem;
+}
+
+.placeholder-image {
+    width: 100%;
+    height: 200px;
+    background-color: #f0f4f8;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-note {
+    padding: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 0.8rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.basic-image {
+    background-color: #f0f4f8;
+}
+
+.enhanced-image {
+    background-color: #e6f7ff;
+    background-image: linear-gradient(120deg, #e6f7ff, #f0f7ff);
+}
+
+/* Concept Combinations */
+.combination-examples {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.combo-example {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1.25rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.combo-example h4 {
+    margin-top: 0;
+    color: #0070f3;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #eaecef;
+    padding-bottom: 0.5rem;
+}
+
+.combo-image {
+    margin-top: 1rem;
+}
+
+.fusion-image {
+    background-color: #f0f7ff;
+}
+
+.blend-image {
+    background-color: #faf5ff;
+}
+
+/* Tip Box */
+.tip-box {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin: 1.5rem 0;
+}
+
+.tip-box.highlight {
+    border-left: 4px solid #0070f3;
+    background-color: #f0f7ff;
+}
+
+.tip-box h4 {
+    margin-top: 0;
+    color: #0070f3;
+    margin-bottom: 0.75rem;
+}
+
+.tip-box code {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-family: 'Fira Code', 'Menlo', 'Monaco', 'Courier New', monospace;
+    font-size: 0.9rem;
+}
+
+/* Sketch Example */
+.sketch-example {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin: 1.5rem 0;
+}
+
+.sketch-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.sketch-column {
+    flex: 1;
+    min-width: 250px;
+}
+
+.sketch-column h4 {
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.arrow {
+    font-size: 2rem;
+    color: #0070f3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+}
+
+.sketch-image {
+    width: 100%;
+}
+
+.sketch {
+    background-color: #f8f9fa;
+    border: 1px dashed #ccc;
+}
+
+.rendered {
+    background-color: #f0f7ff;
+}
+
+.prompt-for-sketch {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 6px;
+}
+
+.best-practices-list {
+    margin-top: 1.5rem;
+}
+
+.best-practices-list h4 {
+    color: #333;
+    margin-bottom: 0.75rem;
+}
+
+.best-practices-list ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.best-practices-list li {
+    margin-bottom: 0.5rem;
+}
+
+/* Platform Tips */
+.platform-tips {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.platform-tip-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1.25rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.platform-tip-card h4 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #0070f3;
+    border-bottom: 1px solid #eaecef;
+    padding-bottom: 0.5rem;
+}
+
+.platform-tips-list {
+    margin: 0 0 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.platform-tips-list li {
+    margin-bottom: 0.5rem;
+}
+
+.platform-tip-card .example-prompt {
+    background-color: #f8f9fa;
+    padding: 0.75rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.platform-tip-card .example-prompt p {
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+.platform-tip-card code {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-family: 'Fira Code', 'Menlo', 'Monaco', 'Courier New', monospace;
+    font-size: 0.9rem;
+}
+
+/* Troubleshooting */
+.troubleshooting-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+}
+
+.troubleshooting-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1.25rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.troubleshooting-card h4 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #e53e3e;
+}
+
+.solution h5 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: #38b2ac;
+    font-size: 0.95rem;
+}
+
+.solution ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.solution li {
+    margin-bottom: 0.5rem;
+}
+
+/* Best Practices Styles */
+.best-practices-container {
+    margin: 2rem 0;
+}
+
+.practice-category {
+    margin-bottom: 3rem;
+}
+
+.practice-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.practice-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.practice-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #f0f7ff;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0070f3;
+    font-size: 1.5rem;
+}
+
+.tool-icon::before {
+    content: '⚙️';
+}
+
+.verify-icon::before {
+    content: '✓';
+}
+
+.specific-icon::before {
+    content: '!';
+}
+
+.structure-icon::before {
+    content: '≡';
+}
+
+.iterate-icon::before {
+    content: '↻';
+}
+
+.feedback-icon::before {
+    content: '↔';
+}
+
+.input-icon::before {
+    content: '⎙';
+}
+
+.task-icon::before {
+    content: '✎';
+}
+
+.caution-icon::before {
+    content: '⚠';
+}
+
+.ethics-icon::before {
+    content: '⚖';
+}
+
+.practice-card h4 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: #0070f3;
+}
+
+.practice-card p {
+    margin-bottom: 1rem;
+    flex: 1;
+}
+
+.practice-action {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-top: auto;
+}
+
+.practice-action h5 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.practice-action ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.practice-action li {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* Key Takeaways */
+.key-takeaways {
+    background-color: #f0f7ff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.key-takeaways h3 {
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #0070f3;
+}
+
+.takeaways-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+}
+
+.takeaway {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1.25rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.takeaway-number {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #0070f3;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.takeaway p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* Next Steps */
+.next-steps {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin: 2rem 0;
+}
+
+.next-steps h3 {
+    margin-top: 0;
+    color: #0070f3;
+    margin-bottom: 1rem;
+}
+
+.next-steps p:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .image-prompt-framework, 
+    .combination-examples,
+    .platform-tips,
+    .troubleshooting-grid,
+    .practice-cards,
+    .takeaways-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .sketch-row {
+        flex-direction: column;
+    }
+    
+    .arrow {
+        transform: rotate(90deg);
+        margin: 1rem 0;
+    }
+}

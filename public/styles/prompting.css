@@ -1,0 +1,436 @@
+/* 
+ * Practical AI Toolkit
+ * Prompting Styles
+ */
+
+/* Section Intro */
+.section-intro {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    border-left: 4px solid #0070f3;
+}
+
+.section-intro p:last-child {
+    margin-bottom: 0;
+}
+
+/* Technique Notes */
+.technique-note {
+    font-style: italic;
+    background-color: #f7f7f7;
+    padding: 1rem;
+    border-radius: 6px;
+    margin: 1.5rem 0;
+}
+
+/* Prompt Examples */
+.prompt-example-container {
+    margin: 2rem 0;
+}
+
+.prompt-example {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    margin: 1.5rem 0;
+}
+
+.example-label {
+    background-color: #f0f4f8;
+    padding: 0.75rem 1.25rem;
+    font-weight: 600;
+    color: #333;
+    border-bottom: 1px solid #eaecef;
+}
+
+.example-content {
+    padding: 0;
+}
+
+/* Toggle View */
+.toggle-view {
+    display: flex;
+    border-bottom: 1px solid #eaecef;
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    flex: 1;
+    transition: all 0.2s ease;
+    color: #666;
+    border-bottom: 3px solid transparent;
+}
+
+.toggle-btn.active {
+    background-color: #f8f9fa;
+    color: #0070f3;
+    font-weight: 500;
+    border-bottom-color: #0070f3;
+}
+
+.toggle-btn:hover:not(.active) {
+    background-color: #f0f4f8;
+}
+
+/* Example Views */
+.example-view {
+    display: none;
+    padding: 1.5rem;
+}
+
+.example-view.active {
+    display: block;
+}
+
+/* Structured View */
+.structured-view pre {
+    margin: 0;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    padding: 1rem;
+    overflow-x: auto;
+}
+
+.structured-view code {
+    font-family: 'Fira Code', 'Menlo', 'Monaco', 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Conversational View */
+.conversational-view {
+    display: none;
+    padding: 0;
+}
+
+.conversational-view.active {
+    display: block;
+}
+
+.chat-message {
+    padding: 1rem 1.5rem;
+    margin: 0;
+    border-bottom: 1px solid #f0f4f8;
+}
+
+.chat-message:last-child {
+    border-bottom: none;
+}
+
+.chat-message.user {
+    background-color: #f0f7ff;
+}
+
+.chat-message.ai {
+    background-color: #ffffff;
+}
+
+.chat-message p {
+    margin: 0 0 0.75rem 0;
+}
+
+.chat-message p:last-child {
+    margin-bottom: 0;
+}
+
+.chat-message ol, .chat-message ul {
+    margin: 0.75rem 0;
+    padding-left: 1.5rem;
+}
+
+.chat-message li {
+    margin-bottom: 0.5rem;
+}
+
+/* Key Points */
+.key-points {
+    background-color: #f8fbff;
+    padding: 1.25rem;
+    border-radius: 6px;
+    margin-top: 1.5rem;
+}
+
+.key-points h5 {
+    margin-top: 0;
+    color: #0070f3;
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.key-points ul {
+    margin: 0;
+}
+
+/* Feature Grid */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.feature-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-card h4 {
+    margin-top: 0;
+    color: #0070f3;
+    margin-bottom: 0.75rem;
+}
+
+.feature-card p {
+    flex: 1;
+    margin-bottom: 1rem;
+}
+
+.feature-tip {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+    background-color: #f8f9fa;
+    padding: 0.75rem;
+    border-radius: 4px;
+    border-left: 3px solid #0070f3;
+}
+
+/* Framework Components */
+.framework-container {
+    margin: 1.5rem 0;
+}
+
+.framework-components {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.framework-component {
+    display: flex;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.component-label {
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+}
+
+.framework-component:nth-child(1) .component-label {
+    background-color: #0070f3; /* Blue for Role */
+}
+
+.framework-component:nth-child(2) .component-label {
+    background-color: #38b2ac; /* Teal for Task */
+}
+
+.framework-component:nth-child(3) .component-label {
+    background-color: #805ad5; /* Purple for Context */
+}
+
+.framework-component:nth-child(4) .component-label {
+    background-color: #dd6b20; /* Orange for Format */
+}
+
+.component-content {
+    flex: 1;
+    padding: 1.25rem;
+}
+
+.component-content h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.component-content p {
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+}
+
+.component-example {
+    background-color: #f8f9fa;
+    padding: 0.75rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #333;
+}
+
+.framework-example {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.framework-example h4 {
+    margin: 0;
+    padding: 1rem 1.5rem;
+    background-color: #f0f4f8;
+    border-bottom: 1px solid #eaecef;
+}
+
+.framework-example pre {
+    margin: 0;
+    padding: 1.5rem;
+    background-color: #ffffff;
+    overflow-x: auto;
+    position: relative;
+}
+
+.framework-example code {
+    font-family: 'Fira Code', 'Menlo', 'Monaco', 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Other Frameworks Section */
+.frameworks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.framework-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.framework-card h4 {
+    margin-top: 0;
+    color: #0070f3;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.framework-card h4::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #0070f3;
+    margin-right: 0.5rem;
+}
+
+.framework-card p {
+    margin-bottom: 1rem;
+}
+
+.framework-parts {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-top: 1rem;
+}
+
+.framework-parts h5 {
+    margin-top: 0;
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+    color: #333;
+}
+
+.framework-parts ul {
+    margin: 0;
+    padding-left: 1.25rem;
+}
+
+.framework-parts li {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* Copy Button Styling */
+.copy-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: #f0f4f8;
+    border: 1px solid #eaecef;
+    border-radius: 4px;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #666;
+    z-index: 10;
+}
+
+.copy-button:hover {
+    background: #e0e7f0;
+    color: #0070f3;
+}
+
+.copy-button span {
+    display: inline-block;
+}
+
+/* Toggle Examples Button */
+.toggle-examples-btn {
+    display: block;
+    margin: 1.5rem auto;
+    background-color: #f0f4f8;
+    border: 1px solid #eaecef;
+    border-radius: 4px;
+    padding: 0.6rem 1.25rem;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #0070f3;
+    font-weight: 500;
+}
+
+.toggle-examples-btn:hover {
+    background-color: #e1eaf4;
+}
+
+.more-examples-container {
+    margin-top: 1rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .framework-components {
+        grid-template-columns: 1fr;
+    }
+    
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .frameworks-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .copy-button {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.75rem;
+    }
+}

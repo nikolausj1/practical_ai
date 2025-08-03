@@ -1,0 +1,225 @@
+/* 
+ * Practical AI Toolkit
+ * Navigation Stylesheet
+ */
+
+/* Sidebar Navigation */
+#sidebar {
+    width: 280px;
+    background-color: #ffffff;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    transition: width 0.3s ease, height 0.3s ease;
+    position: relative;
+    flex-shrink: 0;
+    min-height: calc(100vh - 140px);
+    height: 100%;
+    overflow-y: auto;
+}
+
+#sidebar.collapsed {
+    width: 60px;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid #eaecef;
+}
+
+.sidebar-header h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+#sidebar.collapsed .sidebar-header h2,
+#sidebar.collapsed nav {
+    display: none;
+}
+
+.collapse-btn {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 5px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.collapse-btn:hover {
+    background-color: #f0f4f8;
+    color: #0070f3;
+}
+
+.collapse-icon {
+    transition: transform 0.3s ease;
+}
+
+#sidebar.collapsed .collapse-btn {
+    position: absolute;
+    top: 1.25rem;
+    left: 15px;
+}
+
+#sidebar.collapsed .collapse-icon {
+    transform: rotate(180deg);
+}
+
+/* Sidebar Navigation Menu */
+#sidebar nav {
+    padding: 1rem 0;
+}
+
+#sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#sidebar nav li {
+    margin: 0;
+    padding: 0;
+}
+
+#sidebar nav a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: #333;
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    transition: all 0.2s ease;
+    font-size: 0.95rem;
+}
+
+#sidebar nav a:hover, 
+#sidebar nav a.active {
+    background-color: #f0f4f8;
+    border-left-color: #0070f3;
+    color: #0070f3;
+}
+
+/* Mobile Navigation Toggle */
+.mobile-toggle {
+    display: none;
+    position: absolute;
+    top: 1rem;
+    right: -45px;
+    background-color: white;
+    border: none;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    width: 40px;
+    height: 40px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    z-index: 50;
+    padding: 8px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #333;
+    margin: 3px 0;
+    transition: all 0.3s ease;
+}
+
+/* Top Navigation */
+#top-nav {
+    display: flex;
+    align-items: center;
+}
+
+#top-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+#top-nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+#top-nav a:hover {
+    color: #0070f3;
+}
+
+#top-nav a.btn {
+    display: inline-block;
+    background-color: #0070f3;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+#top-nav a.btn:hover {
+    background-color: #0056b3;
+    text-decoration: none;
+    color: white;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    #sidebar {
+        position: fixed;
+        top: 60px; /* Height of header on mobile */
+        left: 0;
+        z-index: 90;
+        height: calc(100% - 60px);
+        width: 100%;
+        transform: translateX(-100%);
+    }
+    
+    #sidebar.open {
+        transform: translateX(0);
+    }
+    
+    .collapse-btn {
+        display: none;
+    }
+    
+    .mobile-toggle {
+        display: flex;
+    }
+    
+    #sidebar.open .mobile-toggle span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    #sidebar.open .mobile-toggle span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    #sidebar.open .mobile-toggle span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
+
+@media (max-width: 576px) {
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    #top-nav ul {
+        gap: 1rem;
+    }
+}

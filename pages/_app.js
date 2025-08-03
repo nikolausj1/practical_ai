@@ -1,23 +1,17 @@
 import { useEffect } from 'react';
-import Head from 'next/head';
+import '../styles/main.css';
+import '../styles/content.css';
+import '../styles/navigation.css';
+import '../styles/prompting.css';
+import '../styles/input-tools.css';
+import '../styles/tips-usecases.css';
+import '../styles/image-best-practices.css';
+import '../styles/about-sections.css';
+import '../styles/responsive.css';
+import '../styles/animations.css';
 
 function MyApp({ Component, pageProps }) {
-  // Import global styles
-  useEffect(() => {
-    // Import CSS only on client side
-    if (typeof window !== 'undefined') {
-      require('../styles/main.css');
-    }
-  }, []);
-
-  return (
-    <>
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </Head>
-      <Component {...pageProps} />
-    </>
-  );
+  return <Component {...pageProps} />;
 }
 
 export default MyApp;
