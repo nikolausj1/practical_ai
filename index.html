@@ -1,0 +1,2276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical AI Toolkit</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/content-interaction.js" defer></script>
+    <script src="scripts/prompting-interaction.js" defer></script>
+    <script src="scripts/input-tools-interaction.js" defer></script>
+    <script src="scripts/tips-usecases-interaction.js" defer></script>
+    <script src="scripts/image-best-practices-interaction.js" defer></script>
+    <script src="scripts/about-sections-interaction.js" defer></script>
+    <script src="scripts/mobile.js" defer></script>
+    <script src="scripts/animations.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Practical AI Toolkit</h1>
+            <nav id="top-nav">
+                <ul>
+                    <li><a href="#book" class="btn">Book Me to Speak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="layout-container">
+        <!-- Collapsible Sidebar Navigation -->
+        <aside id="sidebar">
+            <div class="sidebar-header">
+                <!-- Contents header removed per feedback -->
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#what-is-ai">What is AI</a></li>
+                    <li><a href="#when-to-use">When to Use AI</a></li>
+                    <li><a href="#which-ai">Which AI to Use</a></li>
+                    <li><a href="#types-of-prompting">Types of Prompting</a></li>
+                    <li><a href="#frameworks">Prompting Frameworks</a></li>
+                    <li><a href="#input-types">Input Types and Tools</a></li>
+                    <li><a href="#prompting-tips">General Prompting Tips</a></li>
+                    <li><a href="#use-cases">Use Cases</a></li>
+                    <li><a href="#image-generation">Image Generation Tips</a></li>
+                    <li><a href="#best-practices">Best Practices Overview</a></li>
+                    <li><a href="#about-me">About Me</a></li>
+                    <li><a href="#about-talk">About the Talk</a></li>
+                    <li><a href="#book" class="sidebar-cta">Book Me to Speak</a></li>
+                </ul>
+            </nav>
+            <button id="toggle-sidebar" class="mobile-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main>
+            <section id="home" class="content-section active">
+                <div class="container">
+                    <h2>Welcome to the Practical AI Toolkit</h2>
+                    <p>Welcome to the companion site for the Practical AI talk.</p>
+                    <p>This site expands on what was covered in the session. Use it to revisit key ideas, explore practical examples, and try out the tools and frameworks that make AI genuinely useful in your work and life.</p>
+                </div>
+            </section>
+
+            <!-- What is AI Section with real content -->
+            <section id="what-is-ai" class="content-section">
+                <div class="container">
+                    <h2>What is AI</h2>
+                    
+                    <div class="subsection">
+                        <h3>Model Training</h3>
+                        <p>Trained on billions of text examples (books, articles, websites). AI models learn patterns in grammar, facts, reasoning, and style through extensive processing.</p>
+                        
+                        <p>Companies gather billions of documents—books, Wikipedia articles, websites, research papers—and feed them through thousands of powerful computers for months. Training just one model like ChatGPT can cost over $100 million. The computer isn't memorizing facts, but learning patterns—understanding how human language works and the patterns of human thought.</p>
+                    </div>
+                    
+                    <div class="subsection">
+                        <h3>Fine Tuning</h3>
+                        <p>After initial training, models undergo fine-tuning to teach them how to have helpful conversations. This process involves training on examples of good AI responses to make the model more useful and aligned with human expectations.</p>
+                    </div>
+                    
+                    <div class="subsection">
+                        <h3>Alignment</h3>
+                        <p>Once trained and fine-tuned, models are tested and reviewed for quality and safety. This crucial step ensures they don't provide harmful, illegal, or inappropriate information. Alignment makes AI systems beneficial, harmless, and honest in their interactions with users.</p>
+                    </div>
+                    
+                    <div class="subsection">
+                        <h3>Response Generation</h3>
+                        <p>After extensive testing and refinement, the model is released to the public. When you send a request, it generates responses one word at a time. For each word, it thinks: "Based on all the patterns I've learned and the current conversation, what word comes next?"</p>
+                        
+                        <p>Think of it like super-powered autocomplete. It's choosing the most likely next word based on the patterns learned during training. And it does that for each subsequent word until it feels the answer is complete.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- When to Use AI Section -->
+            <section id="when-to-use" class="content-section">
+                <div class="container">
+                    <h2>When to Use AI and When Not to Use AI</h2>
+                    
+                    <div class="subsection">
+                        <h3>When to Use AI</h3>
+                        <p>There are several types of work where AI can be particularly useful, given the current capabilities and limitations of LLMs:</p>
+                        
+                        <ol class="numbered-list">
+                            <li>
+                                <strong>Work that requires quantity.</strong> For example, the number of ideas you generate determines the quality of the best idea. You want to generate a lot of ideas in any brainstorming session. Most people stop after generating just a few ideas because they become exhausted but, <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4708466" target="_blank">the AI can provide hundreds that do not meaningfully repeat</a>.
+                            </li>
+                            
+                            <li>
+                                <strong>Work where you are an expert and can assess quickly whether AI is good or bad.</strong> This can involve complicated and exacting work, but it relies on your expertise to determine whether the AI is providing valuable outputs. For example, o1, the new AI model from OpenAI, can solve some PhD-level problems, but it can be hard to know whether its answers are useful without being an expert yourself.
+                            </li>
+                            
+                            <li>
+                                <strong>Work that involves summarizing large amounts of information</strong>, but where the downside of errors is low, and you are not expected to have detailed knowledge of the underlying information. AI is <a href="https://arxiv.org/pdf/2404.01261" target="_blank">good at summarizing novel-length work</a>, but less successful at fact-checking it.
+                            </li>
+                            
+                            <li>
+                                <strong>Work that is mere translation between frames or perspectives.</strong> For example, you have developed a policy but now have to turn it into a dozen different training documents for different audiences in your organization. AI is very good at this sort of translation, <a href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2810364" target="_blank">increasing and decreasing complexity of documents so that people can understand them</a>.
+                            </li>
+                            
+                            <li>
+                                <strong>Work that will keep you moving forward.</strong> Little things often block our way, and a push might be all we need to accomplish it. When writing prior to AI, I might get stuck on a sentence and walk away from writing for an hour, but now I ask AI <em>give me thirty distinct ways to end this sentence</em>. I would likely not use any of them verbatim, but they may unlock some ways forward I may not have thought of.
+                            </li>
+                        </ol>
+                        
+                        <div class="show-more-container">
+                            <button class="show-more-btn">Show more examples</button>
+                            <div class="show-more-content">
+                                <ol class="numbered-list" start="6">
+                                    <li>
+                                        <strong>Work that contains some elements that you can understand but need help on the context or details.</strong> <a href="https://marginalrevolution.com/marginalrevolution/2024/12/how-to-read-a-book-using-o1.html" target="_blank">Tyler Cowen suggests using the AI as a companion when reading</a>, because it allows you to ask infinite questions.
+                                    </li>
+                                    
+                                    <li>
+                                        <strong>Work where you need variance</strong>, and where you will select the best answer as an editor or curator. Asking for a variety of solutions - <em>give me 15 ways to rewrite this bullet in radically different styles, be creative</em> - allows you to find ideas that might be interesting.
+                                    </li>
+                                    
+                                    <li>
+                                        <strong>Work that research shows that AI is almost certainly helpful in</strong> - <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4945566" target="_blank">many kinds of coding</a>, for example.
+                                    </li>
+                                    
+                                    <li>
+                                        <strong>Work where you need a first pass view</strong> at what a hostile, friendly, or naive recipient might think.
+                                    </li>
+                                    
+                                    <li>
+                                        <strong>Work that is entrepreneurial</strong>, where you are expected to stretch your expertise widely over many different disciplines, and where the alternative to a good-enough partner is to not be able to act at all. AI can be a surprisingly competent co-founder, helping give mentorship while also acting to build the documents, demos, and approaches that are otherwise likely to be outside your experience.
+                                    </li>
+                                    
+                                    <li>
+                                        <strong>Work where you need a specific perspective</strong>, and where a simulated first pass from that perspective can be helpful, like reactions from <a href="https://www.interaction-design.org/literature/topics/personas" target="_blank">fictional personas</a>.
+                                    </li>
+                                    
+                                    <li>
+                                        <strong>Work that is mere ritual</strong>, long severed from its purpose (like certain standardized reports that no one reads). What, <a href="https://hbr.org/2024/01/rid-your-organization-of-obstacles-that-infuriate-everyone" target="_blank">in the words of Bob Sutton and Huggy Rao</a>, scatters your attention and makes you less valuable? What work serves no useful purpose? In an ideal world, you would remove the work, but you can at least reduce its hold on you by having AI help.
+                                    </li>
+                                    
+                                    <li>
+                                        <strong>Work where you want a second opinion.</strong> Give an AI access to the data and see if it reaches the same conclusion.
+                                    </li>
+                                    
+                                    <li>
+                                        <strong>Format conversion.</strong> From raw notes to a table, list to CSV, etc. Simple yet powerful and saves time.
+                                    </li>
+                                    
+                                    <li>
+                                        <strong>Work that AIs can do better than humans.</strong> <a href="https://www.oneusefulthing.org/p/the-present-future-ais-impact-long" target="_blank">This is likely to be the fastest-growing category.</a>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="subsection">
+                        <h3>Don't Use AI</h3>
+                        <p>We can set aside the obvious scenarios - using AI for illegal purposes, in high-stakes situations where errors could be catastrophic, or for decisions that ethically require human work. Beyond these clear-cut cases here are 5 times not to use AI:</p>
+                        
+                        <ol class="numbered-list warning-list">
+                            <li>
+                                <strong>When you need to learn and synthesize new ideas or information.</strong> Asking for a summary is not the same as reading for yourself. Asking AI to solve a problem for you is not an effective way to learn, even if it feels like it should be. To learn something new, you are going to have to do the reading and thinking yourself, though <a href="https://www.oneusefulthing.org/p/post-apocalyptic-education" target="_blank">you may still find an AI helpful for parts of the learning process</a>.
+                            </li>
+                            
+                            <li>
+                                <strong>When very high accuracy is required.</strong> The problem with AI errors, the infamous hallucinations, is that, because of how LLMs work, the errors are going to be very plausible. Hallucinations are therefore very hard to spot, and research suggests that people don't even try, <a href="https://www.almendron.com/tribuna/wp-content/uploads/2023/09/falling-asleep-at-the-whee.pdf" target="_blank">"falling asleep at the wheel"</a> and not paying attention. Hallucinations can be reduced, but not eliminated.
+                            </li>
+                            
+                            <li>
+                                <strong>When you do not understand the failure modes of AI.</strong> AI doesn't fail exactly like a human. You know it can hallucinate, but that is only one form of error: AIs often try to persuade you that they are right, or they might become sycophantic and agree with your incorrect answer. You need to use AI enough to understand these risks.
+                            </li>
+                            
+                            <li>
+                                <strong>When the effort is the point.</strong> In many areas, people need to struggle with a topic to succeed - writers rewrite the same page, academics revisit a theory many times. By shortcutting that struggle, no matter how frustrating, you may lose the ability to reach the vital "aha" moment. A certain amount of friction seems necessary to make facts stick in the mind, and keep them from slipping down the memory hole.
+                            </li>
+                            
+                            <li>
+                                <strong>When AI is bad at the task.</strong> This may seem obvious, but AI is bad at things you wouldn't expect (counting the number of r's in the word "strawberry") and good at things you wouldn't expect (writing a Shakespearean sonnet about how hard it is to count the number of r's in the word strawberry where the first letter of every line spells out two fruits). Unfortunately, there is no general manual to tell you the shape of the <a href="https://www.oneusefulthing.org/p/centaurs-and-cyborgs-on-the-jagged" target="_blank">Jagged Frontier of AI abilities</a>, which are constantly evolving. Trial and error, and sharing information with peers, is vital to figuring this out.
+                            </li>
+                        </ol>
+                    </div>
+                    
+                    <div class="subsection">
+                        <h3>Mindset Needed / It's not Google</h3>
+                        <p>The observation about people treating AI like Google resonates deeply. The real challenge isn't just teaching prompt engineering but reframing how people think about AI entirely.</p>
+                        
+                        <p>What if AI education focused less on technical skills and more on developing an experimental mindset—treating AI as a partner to learn from through trial and error? That could bridge the gap between what these models can do and how they're actually used.</p>
+                        
+                        <div class="comparison-box">
+                            <div class="comparison-item">
+                                <h4>Use Google when:</h4>
+                                <p>You need one fact and need peace of mind</p>
+                            </div>
+                            <div class="comparison-item">
+                                <h4>Use AI search when:</h4>
+                                <p>You want a fact with an explainer or if it is multiple questions or more complex question</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Which AI to Use Section -->
+            <section id="which-ai" class="content-section">
+                <div class="container">
+                    <h2>Which AI to Use</h2>
+                    
+                    <div class="subsection">
+                        <h3>Picking a Platform</h3>
+                        <p>For most people you should pick from one of these AI platforms. Most provide access to both advanced and fast models, voice mode, the ability to see images and documents, code execution, mobile apps, image generation, and deep research capabilities.</p>
+                        
+                        <p>Some of these features are free, but you are generally going to need to pay $20/month to get access to the full set of features you need.</p>
+                        
+                        <div class="platform-options">
+                            <h4>AI Platforms</h4>
+                            <ul class="bulleted-list">
+                                <li><a href="https://claude.ai/" target="_blank">Claude</a> from Anthropic - Excellent for long documents, thoughtful responses, and safety. Lacks image generation capabilities.</li>
+                                <li><a href="https://gemini.google.com/" target="_blank">Gemini</a> from Google - Strong at reasoning tasks and has excellent web search integration. Good free tier.</li>
+                                <li><a href="https://chat.openai.com/" target="_blank">ChatGPT</a> from OpenAI - Most widely used, cutting-edge capabilities, excellent at creative tasks and coding. Strong ecosystem of plugins.</li>
+                                <li><a href="https://grok.x.ai/" target="_blank">Grok</a> by Elon Musk's xAI - Good if you are a big X user, though less transparent about how the AI operates.</li>
+                                <li><a href="https://copilot.microsoft.com/" target="_blank">Microsoft's Copilot</a> - Integrates well with Windows and Office, but harder to control which models you're using.</li>
+                                <li><a href="https://deepseek.ai/" target="_blank">DeepSeek</a> - Capable Chinese model that's free to use, but lacks some features from other platforms.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="subsection">
+                        <h3>Picking a Model</h3>
+                        <p>Use the right model for the task. Each platform offers multiple models with different capabilities, speed, and pricing. Here's a breakdown by platform:</p>
+                        
+                        <div class="model-breakdown">
+                            <h4>OpenAI Models</h4>
+                            <ul class="model-list">
+                                <li><strong>GPT-3.5 Turbo:</strong> Fast and free. Good for simple tasks, content generation, and basic coding help.</li>
+                                <li><strong>GPT-4:</strong> More capable reasoning and understanding. Better for complex tasks and professional work.</li>
+                                <li><strong>GPT-4o:</strong> Combines speed and intelligence. Excellent for multimodal tasks and advanced reasoning.</li>
+                            </ul>
+                            
+                            <h4>Claude Models</h4>
+                            <ul class="model-list">
+                                <li><strong>Claude Haiku:</strong> Fast, efficient model for straightforward tasks and real-time interactions.</li>
+                                <li><strong>Claude Sonnet:</strong> Balanced performance for most business and creative tasks.</li>
+                                <li><strong>Claude Opus:</strong> Most powerful model with superior reasoning and document analysis capabilities.</li>
+                            </ul>
+                            
+                            <h4>Gemini Models</h4>
+                            <ul class="model-list">
+                                <li><strong>Gemini Flash:</strong> Quick responses for everyday tasks and simple questions.</li>
+                                <li><strong>Gemini Pro:</strong> Good balance of speed and capability for most professional tasks.</li>
+                                <li><strong>Gemini Ultra:</strong> Top-tier performance for complex reasoning and multistep tasks.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="tier-list">
+                            <div class="tier">
+                                <div class="tier-label">Fast</div>
+                                <div class="tier-content">
+                                    <p>Speedy models for everyday tasks</p>
+                                    <p><em>Best for: Quick questions, summarization, simple creative tasks</em></p>
+                                </div>
+                            </div>
+                            <div class="tier">
+                                <div class="tier-label">Standard</div>
+                                <div class="tier-content">
+                                    <p>Robust models for complex projects</p>
+                                    <p><em>Best for: Professional work, detailed analysis, programming</em></p>
+                                </div>
+                            </div>
+                            <div class="tier">
+                                <div class="tier-label">Premium</div>
+                                <div class="tier-content">
+                                    <p>Premium models for the most challenging work</p>
+                                    <p><em>Best for: Advanced reasoning, multimodal tasks, critical applications</em></p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <p class="advice-note">My advice is to start with the free fast models and then experiment from there based on your specific needs.</p>
+                    </div>
+                    
+                    <div class="subsection">
+                        <h3>Specialized Tools</h3>
+                        <p>There are many different tools for a lot of different specific purposes. Specialized tools have deep knowledge of specific domains. They come pre-tuned with templates and industry-specific knowledge. The list constantly grows and is too long to list here, but below are a few popular ones. Many of these tools are built on top of the frontier models such as ChatGPT, Claude, and Gemini.</p>
+                        
+                        <div class="tool-grid">
+                            <div class="tool-card">
+                                <div class="tool-logo">
+                                    <img src="https://www.perplexity.ai/favicon.ico" alt="Perplexity Logo" class="tool-icon-img">
+                                </div>
+                                <h4>Perplexity</h4>
+                                <p>AI-powered search engine that provides cited answers to complex questions in real-time.</p>
+                                <a href="https://www.perplexity.ai/" target="_blank" class="tool-link">perplexity.ai</a>
+                            </div>
+                            
+                            <div class="tool-card">
+                                <div class="tool-logo">
+                                    <img src="https://assets-global.website-files.com/6362a2b53644da2f8ca8634a/6568d8fa21f1b2cad01f8c98_favicon.svg" alt="Gamma Logo" class="tool-icon-img">
+                                </div>
+                                <h4>Gamma</h4>
+                                <p>AI presentation tool that helps you create beautiful, interactive presentations from simple prompts.</p>
+                                <a href="https://gamma.app/" target="_blank" class="tool-link">gamma.app</a>
+                            </div>
+                            
+                            <div class="tool-card">
+                                <div class="tool-logo">
+                                    <img src="https://static.grammarly.com/assets/files/efe57d016d9efff36da7884c193b646b/favicon-32x32.png" alt="Grammarly Logo" class="tool-icon-img">
+                                </div>
+                                <h4>Grammarly</h4>
+                                <p>AI writing assistant that helps you write clear, mistake-free, and effective text across platforms.</p>
+                                <a href="https://www.grammarly.com/" target="_blank" class="tool-link">grammarly.com</a>
+                            </div>
+                            
+                            <div class="tool-card">
+                                <div class="tool-logo">
+                                    <img src="https://www.midjourney.com/apple-touch-icon.png" alt="Midjourney Logo" class="tool-icon-img">
+                                </div>
+                                <h4>Midjourney</h4>
+                                <p>AI art generator that creates stunning images from text descriptions with remarkable artistic quality.</p>
+                                <a href="https://www.midjourney.com/" target="_blank" class="tool-link">midjourney.com</a>
+                            </div>
+                            
+                            <div class="tool-card">
+                                <div class="tool-logo">
+                                    <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/60e5f2de011b86c698c30e61_Favicon%20256.png" alt="Jasper Logo" class="tool-icon-img">
+                                </div>
+                                <h4>Jasper</h4>
+                                <p>AI content platform for marketing teams to create high-quality content faster.</p>
+                                <a href="https://www.jasper.ai/" target="_blank" class="tool-link">jasper.ai</a>
+                            </div>
+                            
+                            <div class="tool-card">
+                                <div class="tool-logo">
+                                    <img src="https://fireflies.ai/favicon.ico" alt="Fireflies Logo" class="tool-icon-img">
+                                </div>
+                                <h4>Fireflies</h4>
+                                <p>AI meeting assistant that records, transcribes, and creates searchable notes from your conversations.</p>
+                                <a href="https://fireflies.ai/" target="_blank" class="tool-link">fireflies.ai</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Types of Prompting Section -->
+            <section id="types-of-prompting" class="content-section">
+                <div class="container">
+                    <h2>Types of Prompting</h2>
+                    
+                    <div class="section-intro">
+                        <p>There are two main approaches to working with AI models: structured prompting and conversational prompting. Each has its strengths and ideal use cases.</p>
+                        <p>Reference: <a href="https://www.oneusefulthing.org/p/working-with-ai-two-paths-to-prompting" target="_blank">Working with AI: Two Paths to Prompting</a></p>
+                    </div>
+                    
+                    <div class="subsection">
+                        <h3>Structured Prompting</h3>
+                        <p>Structured prompting involves crafting comprehensive, detailed prompts that provide all necessary context, instructions, and format requirements upfront. This approach is ideal for tasks that require specific, context-rich responses.</p>
+                        
+                        <div class="prompt-example-container">
+                            <h4>Big Prompts</h4>
+                            <p>These are ideal for tasks that require structured, context-rich responses. For example, if you're asking AI to draft a business proposal, a comprehensive prompt that outlines your objectives, target audience, and key points will produce the best results.</p>
+                            
+                            <div class="prompt-example">
+                                <div class="example-label">Example: Business Proposal Request</div>
+                                <div class="example-content">
+                                    <div class="toggle-view">
+                                        <button class="toggle-btn active" data-view="structured">Structured Prompt</button>
+                                        <button class="toggle-btn" data-view="conversational">Conversational Approach</button>
+                                    </div>
+                                    
+                                    <div class="example-view structured-view active">
+                                        <pre><code>You are an experienced business consultant specializing in SaaS marketing strategies.
+
+TASK: Draft a comprehensive business proposal for a new AI-powered social media management tool targeting small businesses.
+
+CONTEXT:
+- Target audience: Small businesses with 5-20 employees
+- Budget constraints: $300-500/month for marketing tools
+- Main pain points: Time management, consistent posting, content creation
+- Unique selling proposition: AI-generated content customized to brand voice
+- Competitors: Hootsuite, Buffer, Later
+
+FORMAT:
+1. Executive Summary (max 150 words)
+2. Problem Statement
+3. Proposed Solution with 3 key features
+4. Implementation Timeline (3-month plan)
+5. Pricing Structure (3 tiers)
+6. Expected ROI
+
+Use professional language but avoid jargon. Include specific metrics and KPIs where appropriate.</code></pre>
+                                    </div>
+                                    
+                                    <div class="example-view conversational-view">
+                                        <div class="chat-message user">
+                                            <p>I need to write a business proposal for a new social media tool.</p>
+                                        </div>
+                                        <div class="chat-message ai">
+                                            <p>I'd be happy to help with that. Could you tell me a bit more about the tool and who it's for?</p>
+                                        </div>
+                                        <div class="chat-message user">
+                                            <p>It's for small businesses, and it uses AI to help with social media management.</p>
+                                        </div>
+                                        <div class="chat-message ai">
+                                            <p>Thanks for that information. To create a more effective proposal, I'll need some additional details:</p>
+                                            <ol>
+                                                <li>What specific pain points does this tool address?</li>
+                                                <li>Who are your main competitors?</li>
+                                                <li>What's your unique selling proposition?</li>
+                                                <li>What's the price range you're considering?</li>
+                                            </ol>
+                                        </div>
+                                        <div class="chat-message user">
+                                            <p>Small businesses struggle with time management and consistent posting. Competitors include Hootsuite and Buffer. Our tool uses AI to generate content in the brand's voice. We're thinking $300-500/month.</p>
+                                        </div>
+                                        <div class="chat-message ai">
+                                            <p>Great, that's helpful. Would you like me to structure this as a formal proposal with sections like an executive summary, problem statement, solution, timeline, pricing, and ROI?</p>
+                                        </div>
+                                        <!-- And so on... -->
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="key-points">
+                                <h5>Key Benefits of Structured Prompting:</h5>
+                                <ul class="bulleted-list">
+                                    <li><strong>Precision:</strong> Greater control over the output format and content</li>
+                                    <li><strong>Efficiency:</strong> Faster results with fewer back-and-forth exchanges</li>
+                                    <li><strong>Consistency:</strong> More reliable results when reusing prompts</li>
+                                    <li><strong>Complexity:</strong> Better for handling multi-part or complex tasks</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <p class="technique-note">With structured prompting, you're essentially researching and working hard to get a one-shot response that meets all your requirements.</p>
+                    </div>
+                    
+                    <div class="subsection">
+                        <h3>Conversational Prompting</h3>
+                        <p>Conversational prompting involves shorter, iterative exchanges with the AI. This approach is better suited for exploratory tasks like brainstorming or generating ideas, allowing you to refine the AI's output step by step.</p>
+                        
+                        <div class="prompt-example-container">
+                            <h4>Casual Chats</h4>
+                            <p>Shorter, iterative exchanges are better suited for exploratory tasks like brainstorming or generating ideas. This approach allows you to refine the AI's output step by step, adapting your input based on its responses.</p>
+                            
+                            <div class="prompt-example">
+                                <div class="example-label">Example: Marketing Slogan Brainstorming</div>
+                                <div class="example-content">
+                                    <div class="toggle-view">
+                                        <button class="toggle-btn" data-view="structured">Structured Prompt</button>
+                                        <button class="toggle-btn active" data-view="conversational">Conversational Approach</button>
+                                    </div>
+                                    
+                                    <div class="example-view structured-view">
+                                        <pre><code>You are a creative marketing expert with 15+ years of experience in brand slogan development.
+
+TASK: Generate 10 catchy, memorable marketing slogans for an eco-friendly reusable water bottle brand named "AquaEternal".
+
+CONTEXT:
+- Target audience: Environmentally conscious millennials and Gen Z
+- Brand values: Sustainability, durability, design, social responsibility
+- Unique features: Made from recycled ocean plastic, keeps drinks cold for 24 hours or hot for 12 hours, portion of profits donated to ocean cleanup
+- Tone: Modern, inspiring, slightly playful but not silly
+- Length: Each slogan should be under 8 words
+
+FORMAT:
+Provide 10 numbered slogans with a one-sentence explanation of the concept behind each.</code></pre>
+                                    </div>
+                                    
+                                    <div class="example-view conversational-view active">
+                                        <div class="chat-message user">
+                                            <p>I need some slogan ideas for my new water bottle brand AquaEternal.</p>
+                                        </div>
+                                        <div class="chat-message ai">
+                                            <p>I'd be happy to help! Here are a few initial ideas for your AquaEternal water bottle brand:</p>
+                                            <ol>
+                                                <li>"Hydration for Eternity"</li>
+                                                <li>"Quench Forever"</li>
+                                                <li>"Eternal Refreshment, One Sip at a Time"</li>
+                                                <li>"Water that Lasts, Bottles that Last"</li>
+                                                <li>"Forever Fresh, Forever You"</li>
+                                            </ol>
+                                            <p>Do any of these resonate with you, or would you like to go in a different direction?</p>
+                                        </div>
+                                        <div class="chat-message user">
+                                            <p>I like them but I need something that highlights our eco-friendly angle. The bottles are made from recycled ocean plastic.</p>
+                                        </div>
+                                        <div class="chat-message ai">
+                                            <p>That's a great aspect to highlight! Here are some eco-focused slogan ideas:</p>
+                                            <ol>
+                                                <li>"Ocean Plastic, Eternal Purpose"</li>
+                                                <li>"From Ocean Waste to Everyday Grace"</li>
+                                                <li>"Drink Responsibly, For Earth's Eternity"</li>
+                                                <li>"Waves of Change, One Bottle at a Time"</li>
+                                                <li>"Ocean Rescued, Thirst Reduced"</li>
+                                            </ol>
+                                            <p>How do these align with your brand vision?</p>
+                                        </div>
+                                        <div class="chat-message user">
+                                            <p>Number 1 and 4 are getting closer. Can you make them a bit more catchy and shorter? Maybe with a play on words?</p>
+                                        </div>
+                                        <div class="chat-message ai">
+                                            <p>Let's try some catchier, shorter versions with wordplay:</p>
+                                            <ol>
+                                                <li>"Ocean Saved, Thirst Craved"</li>
+                                                <li>"Sea the Change, Be the Change"</li>
+                                                <li>"Waste to Taste: Ocean Reborn"</li>
+                                                <li>"Eternally Ocean, Internally Pure"</li>
+                                                <li>"Waves to Raves: Drink Differently"</li>
+                                            </ol>
+                                            <p>Are these more in line with what you're looking for?</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="key-points">
+                                <h5>Key Benefits of Conversational Prompting:</h5>
+                                <ul class="bulleted-list">
+                                    <li><strong>Exploration:</strong> Better for discovering ideas you hadn't considered</li>
+                                    <li><strong>Flexibility:</strong> Easier to pivot based on intermediate results</li>
+                                    <li><strong>Refinement:</strong> Ability to progressively improve outputs</li>
+                                    <li><strong>Learning:</strong> Helps you understand what works through iteration</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="advice-note">
+                            <p><strong>Pro Tip:</strong> Never accept the first answer. Refine responses with follow-up prompts to add specificity, change format, or improve quality.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="subsection">
+                        <h3>Controlling the Conversation</h3>
+                        <p>The context of the conversation is important and directly impacts the AI's response. Knowing when to use a follow-up prompt versus rerunning the prompt versus starting a new chat can significantly improve your results.</p>
+                        
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <h4>Building on the Conversation</h4>
+                                <p>Continue the same chat thread when you want the AI to remember previous context, instructions, or examples. This is particularly useful when refining a specific output or working through a complex problem step by step.</p>
+                                <div class="feature-tip">When you want to maintain context and build upon previous exchanges</div>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <h4>Forking the Conversation</h4>
+                                <p>Use the "Edit" button to try different approaches without losing the conversation history. This allows you to experiment with alternative instructions or inputs while preserving the valuable context you've built up.</p>
+                                <div class="feature-tip">When you want to try a different approach without starting over</div>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <h4>Starting a New Conversation</h4>
+                                <p>Begin a fresh chat when the current context becomes confusing or is no longer relevant. This gives you a clean slate and can help when the AI seems stuck in a particular pattern or interpretation.</p>
+                                <div class="feature-tip">When context gets muddled or you need a completely fresh perspective</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Prompting Frameworks Section -->
+            <section id="frameworks" class="content-section">
+                <div class="container">
+                    <h2>Prompting Frameworks</h2>
+                    
+                    <div class="section-intro">
+                        <p>Prompting frameworks provide structured approaches to crafting effective prompts for AI systems. These frameworks will evolve as models evolve (for instance, assigning a role might not be as valuable as it was last year), but they offer valuable starting points for consistent, high-quality results.</p>
+                    </div>
+                    
+                    <div class="subsection">
+                        <h3>RTCF Framework</h3>
+                        <p>The RTCF framework is one of the most popular and effective structured prompting approaches. It stands for Role, Task, Context, and Format, providing a comprehensive structure for complex prompts.</p>
+                        
+                        <div class="framework-container">
+                            <div class="framework-components">
+                                <div class="framework-component">
+                                    <div class="component-label">R</div>
+                                    <div class="component-content">
+                                        <h4>Role</h4>
+                                        <p>Specify who the AI should pretend to be, ideally someone with expertise relevant to the task.</p>
+                                        <div class="component-example">"You are an experienced data scientist specializing in market analysis"</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="framework-component">
+                                    <div class="component-label">T</div>
+                                    <div class="component-content">
+                                        <h4>Task</h4>
+                                        <p>Clearly describe what you want the AI to do, being as specific as possible.</p>
+                                        <div class="component-example">"Analyze this customer survey data and identify the top 3 pain points"</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="framework-component">
+                                    <div class="component-label">C</div>
+                                    <div class="component-content">
+                                        <h4>Context</h4>
+                                        <p>Provide background information, constraints, and any other details the AI needs to know.</p>
+                                        <div class="component-example">"This is for a B2B SaaS company with enterprise clients. Focus on technical issues rather than pricing concerns."</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="framework-component">
+                                    <div class="component-label">F</div>
+                                    <div class="component-content">
+                                        <h4>Format</h4>
+                                        <p>Specify how you want the information presented (structure, style, length, etc.).</p>
+                                        <div class="component-example">"Present your analysis as a professional report with an executive summary, methodology section, key findings, and recommendations."</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        <div class="framework-example">
+                            <h4>RTCF Example Prompt</h4>
+                            <pre><code>**Role:** You are an experienced UX researcher with expertise in mobile app design and user behavior analysis.
+
+**Task:** Review the attached user feedback for our fitness tracking app and identify the top 5 usability issues that should be prioritized for our next update.
+
+**Context:** Our app targets fitness enthusiasts aged 25-45 who work out at least 3 times per week. We recently added new features for workout planning and nutrition tracking, but our app store ratings have dropped from 4.6 to 4.1 stars. We have limited engineering resources, so we need to focus on the most impactful issues first.
+
+**Format:** Present your findings as a prioritized list with:
+1. Clear issue title
+2. Severity rating (Critical, High, Medium, Low)
+3. Brief description of the problem
+4. Specific user quotes or evidence from the feedback
+5. Potential quick-win solution
+End with a summary paragraph</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="subsection">
+                        <h3>Other Common Frameworks</h3>
+                        <p>While RTCF is powerful, there are several other frameworks that can be effective for different purposes. These frameworks will evolve as models improve, but they provide valuable starting points.</p>
+                        
+                        <div class="frameworks-grid">
+                            <div class="framework-card">
+                                <h4>Starter Framework</h4>
+                                <p>A simple but effective approach for general prompting.</p>
+                                <div class="framework-parts">
+                                    <h5>Components:</h5>
+                                    <ul>
+                                        <li><strong>Expert role:</strong> "You are expert [domain]"</li>
+                                        <li><strong>Context:</strong> Background information</li>
+                                        <li><strong>Input:</strong> What you're providing</li>
+                                        <li><strong>Output:</strong> What you want</li>
+                                        <li><strong>Process guidance:</strong> "Plan steps before executing, accuracy & completeness are vital."</li>
+                                        <li><strong>Clarification mechanism:</strong> "Ask questions for clarity"</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="framework-card">
+                                <h4>Key Prompt Structure</h4>
+                                <p>A structured approach focusing on context, instructions, format, and rules.</p>
+                                <div class="framework-parts">
+                                    <h5>Components:</h5>
+                                    <ul>
+                                        <li><strong>Context:</strong> Who you are and what you want</li>
+                                        <li><strong>Instructions:</strong> Specific job description</li>
+                                        <li><strong>Output format:</strong> How results should be presented</li>
+                                        <li><strong>Rules:</strong> Do's and don'ts</li>
+                                        <li><strong>Examples:</strong> Sample inputs and outputs</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="framework-card">
+                                <h4>TAG Framework</h4>
+                                <p>A simplified framework focusing on the essentials.</p>
+                                <div class="framework-parts">
+                                    <h5>Components:</h5>
+                                    <ul>
+                                        <li><strong>T</strong>: Tell the AI your goal</li>
+                                        <li><strong>A</strong>: Assign the AI a role</li>
+                                        <li><strong>G</strong>: Give specific guidance on how to accomplish the task</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="advice-note">
+                            <p><strong>Remember:</strong> These frameworks are starting points, not rigid rules. Adapt them to your specific needs and experiment to find what works best for different tasks.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Input Types and Tools Section -->
+            <section id="input-types" class="content-section">
+                <div class="container">
+                    <h2>Input Types and Tools</h2>
+                    
+                    <div class="section-intro">
+                        <p>AI systems offer multiple ways to interact beyond basic text prompts. Understanding these input types and specialized tools can dramatically enhance your AI experience and unlock powerful new capabilities.</p>
+                    </div>
+                    
+                    <div class="subsection">
+                        <h3>Document Uploads</h3>
+                        <p>Most AI platforms allow you to upload and analyze documents, enabling you to extract insights, summarize content, or ask questions about specific information.</p>
+                        
+                        <div class="feature-box with-image">
+                            <div class="feature-content">
+                                <h4>When to use document uploads:</h4>
+                                <ul class="check-list">
+                                    <li>Analyzing data files and spreadsheets</li>
+                                    <li>Summarizing long documents</li>
+                                    <li>Extracting specific information from PDFs</li>
+                                    <li>Asking questions about research papers</li>
+                                </ul>
+                                
+                                <div class="example-prompt">
+                                    <h5>Example Prompt:</h5>
+                                    <p>"I've uploaded our quarterly sales report. Please analyze the data and identify the top-performing product categories. Then create a summary of key findings and recommendations for next quarter's strategy."</p>
+                                </div>
+                            </div>
+                            <div class="feature-image">
+                                <div class="mockup-container">
+                                    <div class="mockup-header">
+                                        <div class="mockup-icon document-icon"></div>
+                                        <div class="mockup-title">Sales_Report_Q2_2025.pdf</div>
+                                    </div>
+                                    <div class="mockup-content">
+                                        <div class="upload-zone">
+                                            <div class="upload-icon"></div>
+                                            <p>Drop your file here or click to browse</p>
+                                            <button class="upload-button">Upload PDF</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="subsection">
+                        <h3>Image Uploads</h3>
+                        <p>Modern AI models can analyze images, recognize objects, read text, and provide detailed descriptions. This capability is useful for everything from identifying unknown objects to analyzing visual content.</p>
+                        
+                        <div class="feature-box with-image">
+                            <div class="feature-content">
+                                <h4>When to use image uploads:</h4>
+                                <ul class="check-list">
+                                    <li>Identifying objects or ingredients</li>
+                                    <li>Analyzing charts, graphs, or diagrams</li>
+                                    <li>Extracting text from images</li>
+                                    <li>Generating descriptions for visual content</li>
+                                    <li>Getting suggestions based on visual input</li>
+                                </ul>
+                                
+                                <div class="example-prompt">
+                                    <h5>Example Prompt:</h5>
+                                    <p>"I've uploaded a photo of ingredients from my refrigerator. What meals can I make with these ingredients? Please suggest 3-5 recipes that are quick to prepare."</p>
+                                </div>
+                            </div>
+                            <div class="feature-image">
+                                <div class="mockup-container">
+                                    <div class="mockup-header">
+                                        <div class="mockup-icon image-icon"></div>
+                                        <div class="mockup-title">Image Analysis</div>
+                                    </div>
+                                    <div class="mockup-content">
+                                        <div class="image-preview">
+                                            <div class="image-placeholder">
+                                                <div class="image-icon-large"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="subsection">
+                        <h3>Voice Entry</h3>
+                        <p>Many AI platforms support voice input, allowing you to speak your prompts instead of typing them. This creates a more natural, conversational experience and is particularly useful when you're on the go.</p>
+                        
+                        <div class="feature-box with-image">
+                            <div class="feature-content">
+                                <h4>Benefits of voice entry:</h4>
+                                <ul class="check-list">
+                                    <li>Faster than typing for many people</li>
+                                    <li>More natural for conversational interactions</li>
+                                    <li>Accessible when you can't type (e.g., while driving)</li>
+                                    <li>Helps capture ideas quickly</li>
+                                </ul>
+                                
+                                <div class="advice-note">
+                                    <p><strong>Pro Tip:</strong> When using voice entry, speak clearly and at a moderate pace. Use natural language but try to organize your thoughts before speaking for the best results.</p>
+                                </div>
+                            </div>
+                            <div class="feature-image">
+                                <div class="mockup-container voice-entry">
+                                    <div class="voice-wave">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                    <div class="voice-status">Listening...</div>
+                                    <div class="voice-controls">
+                                        <button class="voice-button">
+                                            <div class="microphone-icon"></div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="subsection">
+                        <h3>Advanced Voice Mode</h3>
+                        <p>Some platforms like ChatGPT offer an advanced voice mode that goes beyond basic dictation. This feature provides a fully interactive conversation experience with realistic voices and natural turn-taking.</p>
+                        
+                        <div class="info-box highlight">
+                            <h4>Platform Availability</h4>
+                            <p>Advanced voice mode is currently available on ChatGPT (requires subscription) but not yet on Claude or all Gemini versions. Check your preferred platform for the latest availability.</p>
+                        </div>
+                        
+                        <div class="use-case-grid">
+                            <div class="use-case-card">
+                                <h4>Learning On The Go</h4>
+                                <p>Upload a document, then use voice mode during your commute to discuss and learn about its contents.</p>
+                            </div>
+                            <div class="use-case-card">
+                                <h4>Brainstorming Sessions</h4>
+                                <p>Have a hands-free brainstorming session while walking or doing other activities.</p>
+                            </div>
+                            <div class="use-case-card">
+                                <h4>Meeting Summaries</h4>
+                                <p>Request a detailed summary of your conversation at the end, which you can access later.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="subsection">
+                        <h3>Video Mode</h3>
+                        <p>Some AI models now support video input, allowing them to analyze and respond to video content. This can be particularly useful for demonstrating processes, analyzing movement, or getting feedback on recordings.</p>
+                        
+                        <div class="example-story">
+                            <div class="story-header">
+                                <h4>Real-World Example</h4>
+                            </div>
+                            <div class="story-content">
+                                <p>I was trying to make white fish ceviche but wasn't sure if I was slicing the fish correctly. I recorded a short video of my technique and shared it with the AI. It immediately pointed out that my slices were too thick for proper acid cooking and suggested a more appropriate thickness along with safety tips for handling raw fish.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-box centered">
+                            <div class="video-mockup">
+                                <div class="video-player">
+                                    <div class="video-placeholder">
+                                        <div class="play-button"></div>
+                                    </div>
+                                    <div class="video-controls">
+                                        <div class="progress-bar">
+                                            <div class="progress"></div>
+                                        </div>
+                                        <div class="control-buttons">
+                                            <button class="play-pause"></button>
+                                            <div class="time">00:42 / 01:30</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="subsection">
+                        <h3>Custom Instructions</h3>
+                        <p>Most AI platforms allow you to set custom instructions that apply to all your conversations. This feature lets you establish preferences, provide context, or set constraints that the AI will remember without having to repeat them in every prompt.</p>
+                        
+                        <div class="feature-box with-image">
+                            <div class="feature-content">
+                                <h4>Effective uses for custom instructions:</h4>
+                                <ul class="check-list">
+                                    <li>Setting a preferred tone (formal, casual, technical)</li>
+                                    <li>Specifying your expertise level in various subjects</li>
+                                    <li>Indicating formatting preferences</li>
+                                    <li>Providing recurring context about your role or projects</li>
+                                </ul>
+                                
+                                <div class="example-prompt box">
+                                    <h5>Custom Instruction Example:</h5>
+                                    <p>"I'm a marketing professional with intermediate coding knowledge. When providing technical examples, include explanatory comments. I prefer concise responses with bullet points where appropriate. Always include actionable next steps at the end of your responses. For creative tasks, give me multiple options to choose from."</p>
+                                </div>
+                            </div>
+                            <div class="feature-image">
+                                <div class="mockup-container">
+                                    <div class="mockup-header">
+                                        <div class="mockup-title">Custom Instructions</div>
+                                    </div>
+                                    <div class="mockup-content settings-panel">
+                                        <div class="settings-group">
+                                            <label>What would you like Claude to know about you?</label>
+                                            <textarea placeholder="Your preferences, expertise, role, etc."></textarea>
+                                        </div>
+                                        <div class="settings-group">
+                                            <label>How would you like Claude to respond?</label>
+                                            <textarea placeholder="Tone, format, level of detail, etc."></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="subsection">
+                        <h3>Projects</h3>
+                        <p>Some platforms offer a projects feature that allows you to organize conversations and resources around specific tasks or topics. This helps maintain context and continuity across multiple sessions.</p>
+                        
+                        <div class="info-box">
+                            <h4>Platform-Specific Feature</h4>
+                            <p>Projects are currently available in Claude (Pro plan required). Other platforms may offer similar functionality under different names or organization systems.</p>
+                        </div>
+                        
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <div class="icon-wrapper">
+                                    <div class="feature-icon folder-icon"></div>
+                                </div>
+                                <div class="feature-description">
+                                    <h4>Organized Conversations</h4>
+                                    <p>Create named folders for different tasks or topics</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="icon-wrapper">
+                                    <div class="feature-icon file-icon"></div>
+                                </div>
+                                <div class="feature-description">
+                                    <h4>Stored Context</h4>
+                                    <p>Store files and documents for easy reference</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="icon-wrapper">
+                                    <div class="feature-icon settings-icon"></div>
+                                </div>
+                                <div class="feature-description">
+                                    <h4>Project-Specific Settings</h4>
+                                    <p>Custom instructions for each project</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="subsection">
+                        <h3>Deep Research</h3>
+                        <p>Several AI platforms now offer advanced research capabilities that can search the web for current information and cite sources. This helps overcome the knowledge cutoff limitation of base models.</p>
+                        
+                        <div class="feature-box with-image">
+                            <div class="feature-content">
+                                <h4>Creating effective research prompts:</h4>
+                                <ol class="numbered-list compact">
+                                    <li>Specify the <strong>goal</strong> of your research (what you're trying to accomplish)</li>
+                                    <li>Define the <strong>expected output</strong> format</li>
+                                    <li>Indicate <strong>preferred sources</strong> if relevant</li>
+                                </ol>
+                                
+                                <div class="example-prompt">
+                                    <h5>Example Research Prompt:</h5>
+                                    <p>"I need to write a presentation on emerging trends in renewable energy storage. Conduct expert-level research using recent academic and industry sources. Focus on breakthroughs from the past 2 years. Synthesize findings into 5-7 key trends with supporting evidence and proper citations."</p>
+                                </div>
+                            </div>
+                            <div class="feature-image">
+                                <div class="mockup-container">
+                                    <div class="mockup-header research-header">
+                                        <div class="search-icon"></div>
+                                        <div class="search-bar">
+                                            <span>Researching: renewable energy storage trends...</span>
+                                        </div>
+                                    </div>
+                                    <div class="mockup-content">
+                                        <div class="research-results">
+                                            <div class="source-item">
+                                                <div class="source-name">Nature Energy (2025)</div>
+                                                <div class="source-snippet">Recent advances in solid-state batteries...</div>
+                                            </div>
+                                            <div class="source-item">
+                                                <div class="source-name">MIT Technology Review</div>
+                                                <div class="source-snippet">Thermal energy storage solutions...</div>
+                                            </div>
+                                            <div class="source-item">
+                                                <div class="source-name">IEA Annual Report</div>
+                                                <div class="source-snippet">Growth projections for grid-scale storage...</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="subsection">
+                        <h3>Canvas</h3>
+                        <p>Canvas mode provides a collaborative editing environment where you can refine the AI's output more easily. It's particularly useful for drafting and revising longer documents.</p>
+                        
+                        <div class="canvas-features">
+                            <div class="feature-row">
+                                <div class="canvas-feature">
+                                    <h4>Inline Editing</h4>
+                                    <p>Request specific changes to portions of the text</p>
+                                </div>
+                                <div class="canvas-feature">
+                                    <h4>Version History</h4>
+                                    <p>Track changes and revert to previous versions</p>
+                                </div>
+                            </div>
+                            <div class="feature-row">
+                                <div class="canvas-feature">
+                                    <h4>Formatting Options</h4>
+                                    <p>Apply styles and formatting to your document</p>
+                                </div>
+                                <div class="canvas-feature">
+                                    <h4>Export Capabilities</h4>
+                                    <p>Download in various formats (PDF, DOCX, MD)</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="advice-note highlight">
+                            <p><strong>When to use Canvas:</strong> Toggle on Canvas mode when you know you'll need to edit and build upon the AI's response more than once. It's especially useful for longer documents, collaborative writing, and iterative refinements.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- General Prompting Tips Section -->
+            <section id="prompting-tips" class="content-section">
+                <div class="container">
+                    <h2>General Prompting Tips</h2>
+                    
+                    <div class="section-intro">
+                        <p>These practical tips will help you craft more effective prompts across all AI platforms. Small changes in how you communicate with AI can dramatically improve the quality, relevance, and usefulness of the responses you receive.</p>
+                    </div>
+                    
+                    <div class="tips-container">
+                        <div class="tips-category">
+                            <h3>Output Formatting</h3>
+                            
+                            <div class="tips-grid">
+                                <div class="tip-card">
+                                    <div class="tip-icon format-icon"></div>
+                                    <h4>Specify Output Format</h4>
+                                    <p>Always tell the AI how you want information structured (bullet points, tables, paragraphs, step-by-step, etc.). This gives you control over readability.</p>
+                                    <div class="tip-example">
+                                        <div class="example-header">
+                                            <span class="example-label">Example</span>
+                                            <button class="copy-tip-btn" data-tip="format">Copy</button>
+                                        </div>
+                                        <div class="example-content">
+                                            <p>"Present your analysis as a table with three columns: Strength, Weakness, and Impact Score (1-10). Include a brief 2-3 sentence summary at the end."</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="tip-card">
+                                    <div class="tip-icon length-icon"></div>
+                                    <h4>Control Response Length</h4>
+                                    <p>Specify the desired length of the response, whether it's "brief," "detailed," or a specific word count. This helps avoid overwhelming or insufficient information.</p>
+                                    <div class="tip-example">
+                                        <div class="example-header">
+                                            <span class="example-label">Example</span>
+                                            <button class="copy-tip-btn" data-tip="length">Copy</button>
+                                        </div>
+                                        <div class="example-content">
+                                            <p>"Explain quantum computing in approximately 150 words, suitable for a high school student."</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="tip-card expandable">
+                                    <div class="tip-icon style-icon"></div>
+                                    <h4>Define Tone and Style</h4>
+                                    <p>Specify the writing style and tone you want (formal, casual, technical, simple, etc.) to match your audience and purpose.</p>
+                                    <div class="tip-example">
+                                        <div class="example-header">
+                                            <span class="example-label">Example</span>
+                                            <button class="copy-tip-btn" data-tip="style">Copy</button>
+                                        </div>
+                                        <div class="example-content">
+                                            <p>"Write this email in a professional but warm tone, avoiding overly technical language but maintaining industry credibility."</p>
+                                        </div>
+                                    </div>
+                                    <button class="expand-tip-btn">Show More</button>
+                                    <div class="expanded-content">
+                                        <h5>Style Modifiers to Try:</h5>
+                                        <ul class="modifier-list">
+                                            <li><strong>For clarity:</strong> "Write this like you're explaining to a smart friend who's not in this field."</li>
+                                            <li><strong>For technical content:</strong> "Use precise technical language appropriate for a senior engineer."</li>
+                                            <li><strong>For engaging content:</strong> "Write this in a conversational, engaging style with occasional humor."</li>
+                                            <li><strong>For formal documents:</strong> "Use a formal, academic tone with proper citations where relevant."</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tips-category">
+                            <h3>Context and Background</h3>
+                            
+                            <div class="tips-grid">
+                                <div class="tip-card">
+                                    <div class="tip-icon context-icon"></div>
+                                    <h4>Provide Relevant Context</h4>
+                                    <p>Give the AI necessary background information to understand your question or task properly. Mention audience, purpose, constraints, and relevant details.</p>
+                                    <div class="tip-example">
+                                        <div class="example-header">
+                                            <span class="example-label">Example</span>
+                                            <button class="copy-tip-btn" data-tip="context">Copy</button>
+                                        </div>
+                                        <div class="example-content">
+                                            <p>"I'm preparing a presentation for potential investors who are not technical. They're concerned about market size and competitive advantage rather than implementation details."</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="tip-card">
+                                    <div class="tip-icon example-icon"></div>
+                                    <h4>Include Examples</h4>
+                                    <p>Provide examples of what you're looking for to help the AI understand your expectations and preferred style or approach.</p>
+                                    <div class="tip-example">
+                                        <div class="example-header">
+                                            <span class="example-label">Example</span>
+                                            <button class="copy-tip-btn" data-tip="examples">Copy</button>
+                                        </div>
+                                        <div class="example-content">
+                                            <p>"Here are two examples of how I typically write conclusions for research papers: [Example 1] [Example 2]. Please follow a similar structure and tone for this new conclusion."</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="tip-card expandable">
+                                    <div class="tip-icon persona-icon"></div>
+                                    <h4>Define User Personas</h4>
+                                    <p>When appropriate, create a brief user persona to help the AI understand who will be using the information.</p>
+                                    <div class="tip-example">
+                                        <div class="example-header">
+                                            <span class="example-label">Example</span>
+                                            <button class="copy-tip-btn" data-tip="persona">Copy</button>
+                                        </div>
+                                        <div class="example-content">
+                                            <p>"The target user is a 45-year-old marketing professional with basic technical knowledge who wants to understand AI applications for customer segmentation without getting lost in technical details."</p>
+                                        </div>
+                                    </div>
+                                    <button class="expand-tip-btn">Show More</button>
+                                    <div class="expanded-content">
+                                        <h5>Effective Persona Elements:</h5>
+                                        <ol class="element-list">
+                                            <li><strong>Role/Profession</strong> - Helps frame knowledge level in specific domains</li>
+                                            <li><strong>Technical Expertise</strong> - Guides complexity and terminology</li>
+                                            <li><strong>Goals/Needs</strong> - Focuses the response on relevant information</li>
+                                            <li><strong>Pain Points</strong> - Highlights what to address or avoid</li>
+                                            <li><strong>Time Constraints</strong> - Indicates whether to optimize for brevity or completeness</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tips-category">
+                            <h3>Language and Clarity</h3>
+                            
+                            <div class="tips-grid">
+                                <div class="tip-card">
+                                    <div class="tip-icon clarity-icon"></div>
+                                    <h4>Be Specific and Clear</h4>
+                                    <p>Use precise language and avoid ambiguity. The more specific your request, the more accurate the response will be.</p>
+                                    <div class="tip-example">
+                                        <div class="example-header">
+                                            <span class="example-label">Instead of</span>
+                                        </div>
+                                        <div class="example-content bad-example">
+                                            <p>"Tell me about climate change."</p>
+                                        </div>
+                                        <div class="example-header">
+                                            <span class="example-label">Try</span>
+                                            <button class="copy-tip-btn" data-tip="specific">Copy</button>
+                                        </div>
+                                        <div class="example-content">
+                                            <p>"Explain 3 specific ways climate change is affecting agricultural production in the Midwest United States, with data from the last 5 years."</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="tip-card">
+                                    <div class="tip-icon action-icon"></div>
+                                    <h4>Use Action Verbs</h4>
+                                    <p>Begin your prompts with clear action verbs to make your intent unmistakable.</p>
+                                    <div class="tip-example">
+                                        <div class="example-header">
+                                            <span class="example-label">Effective Action Verbs</span>
+                                        </div>
+                                        <div class="example-content">
+                                            <div class="verb-grid">
+                                                <span>Analyze</span>
+                                                <span>Summarize</span>
+                                                <span>Compare</span>
+                                                <span>Outline</span>
+                                                <span>Generate</span>
+                                                <span>Evaluate</span>
+                                                <span>Explain</span>
+                                                <span>Translate</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="tip-card expandable">
+                                    <div class="tip-icon constraints-icon"></div>
+                                    <h4>Set Clear Constraints</h4>
+                                    <p>Define boundaries and limitations to focus the AI's response on what you actually need.</p>
+                                    <div class="tip-example">
+                                        <div class="example-header">
+                                            <span class="example-label">Example</span>
+                                            <button class="copy-tip-btn" data-tip="constraints">Copy</button>
+                                        </div>
+                                        <div class="example-content">
+                                            <p>"Focus only on peer-reviewed research from the last 3 years. Do not include animal studies or preliminary research."</p>
+                                        </div>
+                                    </div>
+                                    <button class="expand-tip-btn">Show More</button>
+                                    <div class="expanded-content">
+                                        <h5>Useful Constraints to Consider:</h5>
+                                        <ul class="constraint-list">
+                                            <li><strong>Time periods:</strong> "Only include developments from 2020-2025"</li>
+                                            <li><strong>Geographic focus:</strong> "Limit examples to European markets"</li>
+                                            <li><strong>Source quality:</strong> "Only use information from academic or government sources"</li>
+                                            <li><strong>Industry relevance:</strong> "Focus specifically on healthcare applications"</li>
+                                            <li><strong>Budget/resource limitations:</strong> "Solutions must be implementable by a small team with limited budget"</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tips-category">
+                            <h3>Iteration and Refinement</h3>
+                            
+                            <div class="tips-grid">
+                                <div class="tip-card">
+                                    <div class="tip-icon iterate-icon"></div>
+                                    <h4>Iterate and Refine</h4>
+                                    <p>Don't expect perfect results from your first prompt. Use follow-up requests to refine and improve initial responses.</p>
+                                    <div class="tip-example">
+                                        <div class="example-header">
+                                            <span class="example-label">First Prompt</span>
+                                        </div>
+                                        <div class="example-content">
+                                            <p>"Generate 5 creative social media post ideas for a coffee shop."</p>
+                                        </div>
+                                        <div class="example-header">
+                                            <span class="example-label">Follow-up Refinement</span>
+                                            <button class="copy-tip-btn" data-tip="refine">Copy</button>
+                                        </div>
+                                        <div class="example-content">
+                                            <p>"I like idea #3. Can you expand on that concept with more specific visual details and a suggested caption that incorporates our brand voice, which is warm but slightly quirky?"</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="tip-card">
+                                    <div class="tip-icon break-icon"></div>
+                                    <h4>Break Down Complex Tasks</h4>
+                                    <p>Instead of one massive prompt, break complex tasks into a series of smaller, focused prompts for better results.</p>
+                                    <div class="tip-example">
+                                        <div class="example-header">
+                                            <span class="example-label">Instead of</span>
+                                        </div>
+                                        <div class="example-content bad-example">
+                                            <p>"Create a comprehensive marketing strategy for my new fitness app, including target audience analysis, competitor research, messaging, channels, budget allocation, and KPIs."</p>
+                                        </div>
+                                        <div class="example-header">
+                                            <span class="example-label">Try This Approach</span>
+                                            <button class="copy-tip-btn" data-tip="breakdown">Copy</button>
+                                        </div>
+                                        <div class="example-content">
+                                            <p>"Let's develop a marketing strategy for my fitness app step by step. First, help me identify 3-4 potential target audience segments based on these user personas..."</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tips-summary">
+                        <h3>Quick Reference Cheatsheet</h3>
+                        <div class="cheatsheet">
+                            <div class="cheatsheet-section">
+                                <h4>Structure Your Prompts</h4>
+                                <ul>
+                                    <li>Start with context/background</li>
+                                    <li>Clearly state your task/question</li>
+                                    <li>Specify format and style</li>
+                                    <li>Add any constraints or special requirements</li>
+                                </ul>
+                            </div>
+                            <div class="cheatsheet-section">
+                                <h4>Troubleshooting Tips</h4>
+                                <ul>
+                                    <li>Too vague? Add specific examples</li>
+                                    <li>Poor quality? Specify expertise level</li>
+                                    <li>Wrong direction? Clarify goals and context</li>
+                                    <li>Too generic? Request unique perspectives</li>
+                                </ul>
+                            </div>
+                            <div class="cheatsheet-section">
+                                <h4>Advanced Techniques</h4>
+                                <ul>
+                                    <li>Request reasoning/thought process</li>
+                                    <li>Ask for multiple approaches</li>
+                                    <li>Use step-by-step instructions</li>
+                                    <li>Specify confidence levels for answers</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Use Cases Section -->
+            <section id="use-cases" class="content-section">
+                <div class="container">
+                    <h2>Practical Use Cases</h2>
+                    
+                    <div class="section-intro">
+                        <p>See how AI can be practically applied across different domains and scenarios. These real-world examples demonstrate effective prompting techniques in action and provide templates you can adapt for your own needs.</p>
+                    </div>
+                    
+                    <div class="use-case-filters">
+                        <button class="filter-btn active" data-filter="all">All Use Cases</button>
+                        <button class="filter-btn" data-filter="business">Business</button>
+                        <button class="filter-btn" data-filter="education">Education</button>
+                        <button class="filter-btn" data-filter="creative">Creative</button>
+                        <button class="filter-btn" data-filter="personal">Personal</button>
+                    </div>
+                    
+                    <div class="use-cases-grid">
+                        <!-- Business Use Cases -->
+                        <div class="use-case-card" data-category="business">
+                            <div class="use-case-header">
+                                <h3>Meeting Preparation Assistant</h3>
+                                <span class="category-tag business-tag">Business</span>
+                            </div>
+                            <div class="use-case-content">
+                                <p class="use-case-description">Generate insightful questions and talking points for an upcoming business meeting based on background materials.</p>
+                                
+                                <div class="use-case-example">
+                                    <div class="example-header">
+                                        <span class="example-label">Example Prompt</span>
+                                        <button class="copy-case-btn" data-case="meeting">Copy</button>
+                                    </div>
+                                    <div class="example-content prompt-content">
+                                        <p>I have a meeting with [Company/Person] tomorrow to discuss [topic]. Based on these background materials I'm uploading [or: "Based on this context..."], help me prepare by:</p>
+                                        <ol>
+                                            <li>Summarizing the 3-5 key points I should be familiar with</li>
+                                            <li>Suggesting 7-10 insightful questions to ask, organized by priority</li>
+                                            <li>Identifying potential objections or concerns they might raise and how I could address them</li>
+                                            <li>Recommending specific data points or examples I should reference</li>
+                                        </ol>
+                                        <p>Format this as a meeting brief I can quickly review before walking into the discussion.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="outcome-preview">
+                                    <button class="preview-toggle">Show Example Outcome</button>
+                                    <div class="preview-content">
+                                        <h4>Meeting Brief: Acme Corp Partnership Discussion</h4>
+                                        <h5>Key Points to Remember:</h5>
+                                        <ul>
+                                            <li>Acme's recent Q3 results showed 27% growth in the enterprise segment</li>
+                                            <li>Their current vendor contract expires in 3 months</li>
+                                            <li>Their technical infrastructure is primarily AWS-based</li>
+                                            <li>CEO has publicly stated focus on AI-powered solutions</li>
+                                        </ul>
+                                        <h5>Priority Questions:</h5>
+                                        <ol>
+                                            <li>How satisfied are you with your current implementation of...?</li>
+                                            <li>What specific metrics would define success for this partnership?</li>
+                                            <li>...</li>
+                                        </ol>
+                                        <p><em>(Example continues with potential objections and data points)</em></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="use-case-card" data-category="business">
+                            <div class="use-case-header">
+                                <h3>Competitive Analysis Framework</h3>
+                                <span class="category-tag business-tag">Business</span>
+                            </div>
+                            <div class="use-case-content">
+                                <p class="use-case-description">Create a structured comparison of competitors in your market space to identify opportunities and threats.</p>
+                                
+                                <div class="use-case-example">
+                                    <div class="example-header">
+                                        <span class="example-label">Example Prompt</span>
+                                        <button class="copy-case-btn" data-case="competitive">Copy</button>
+                                    </div>
+                                    <div class="example-content prompt-content">
+                                        <p>Help me create a comprehensive competitive analysis for my [product/service] in the [industry] space. Here are the main competitors:</p>
+                                        <ul>
+                                            <li>[Competitor 1] - [brief description]</li>
+                                            <li>[Competitor 2] - [brief description]</li>
+                                            <li>[Competitor 3] - [brief description]</li>
+                                        </ul>
+                                        <p>For each competitor and for my own offering, analyze:</p>
+                                        <ol>
+                                            <li>Key differentiators and unique selling propositions</li>
+                                            <li>Pricing strategy and positioning</li>
+                                            <li>Target customer segments</li>
+                                            <li>Strengths and weaknesses</li>
+                                            <li>Marketing and distribution approaches</li>
+                                        </ol>
+                                        <p>Then provide:</p>
+                                        <ol>
+                                            <li>A SWOT analysis for my offering</li>
+                                            <li>3-5 strategic opportunities based on gaps in the market</li>
+                                            <li>Key threats to be aware of</li>
+                                        </ol>
+                                        <p>Format as a strategic report with clear headings, bulleted lists, and a visual comparison table where appropriate.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Education Use Cases -->
+                        <div class="use-case-card" data-category="education">
+                            <div class="use-case-header">
+                                <h3>Concept Explanation Generator</h3>
+                                <span class="category-tag education-tag">Education</span>
+                            </div>
+                            <div class="use-case-content">
+                                <p class="use-case-description">Create multi-level explanations of complex concepts that can be understood by different audiences.</p>
+                                
+                                <div class="use-case-example">
+                                    <div class="example-header">
+                                        <span class="example-label">Example Prompt</span>
+                                        <button class="copy-case-btn" data-case="concept">Copy</button>
+                                    </div>
+                                    <div class="example-content prompt-content">
+                                        <p>Explain the concept of [topic] in four different ways:</p>
+                                        <ol>
+                                            <li>For a 10-year-old with no background knowledge</li>
+                                            <li>For a high school student with basic subject knowledge</li>
+                                            <li>For an undergraduate student majoring in [relevant field]</li>
+                                            <li>For a fellow expert in the field</li>
+                                        </ol>
+                                        <p>For each explanation:</p>
+                                        <ul>
+                                            <li>Use appropriate vocabulary and complexity for the audience</li>
+                                            <li>Include a helpful analogy or metaphor where appropriate</li>
+                                            <li>Mention 1-2 practical applications or examples</li>
+                                            <li>Keep each explanation under 150 words</li>
+                                        </ul>
+                                        <p>After the four explanations, create a table of 5-8 key terms related to this concept, with definitions that would be appropriate for a high school textbook.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="outcome-preview">
+                                    <button class="preview-toggle">Show Example Outcome</button>
+                                    <div class="preview-content">
+                                        <h4>Explaining "Machine Learning"</h4>
+                                        
+                                        <h5>For a 10-year-old:</h5>
+                                        <p>Imagine teaching your dog to fetch. At first, your dog doesn't know what to do when you throw a ball. But after practicing many times, your dog learns that when you throw something, it should run after it and bring it back. The dog learned this by practicing over and over. Machine learning is like that, but for computers. Instead of teaching computers exactly what to do with strict rules, we show them lots of examples, and they figure out the patterns themselves - just like your dog learned to fetch!</p>
+                                        
+                                        <h5>For a high school student:</h5>
+                                        <p>Machine learning is a way to make computers learn from data without being explicitly programmed for every situation. Just as you might recognize patterns in math problems after solving many similar ones, machine learning algorithms find patterns in data. For example, a computer can learn to recognize cats in photos after seeing thousands of cat pictures. Netflix uses machine learning to recommend shows based on what you've watched before, and email services use it to filter spam. It works by adjusting mathematical models based on examples until the computer gets good at making predictions or decisions.</p>
+                                        
+                                        <p><em>(Example continues with undergraduate and expert explanations)</em></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Creative Use Cases -->
+                        <div class="use-case-card" data-category="creative">
+                            <div class="use-case-header">
+                                <h3>Story Development Framework</h3>
+                                <span class="category-tag creative-tag">Creative</span>
+                            </div>
+                            <div class="use-case-content">
+                                <p class="use-case-description">Develop story ideas with rich character development, plot structuring, and world-building elements.</p>
+                                
+                                <div class="use-case-example">
+                                    <div class="example-header">
+                                        <span class="example-label">Example Prompt</span>
+                                        <button class="copy-case-btn" data-case="story">Copy</button>
+                                    </div>
+                                    <div class="example-content prompt-content">
+                                        <p>I'd like to develop a story idea about [brief concept]. Help me flesh this out with:</p>
+                                        <ol>
+                                            <li>3-5 unique main characters with:
+                                                <ul>
+                                                    <li>Basic demographics and background</li>
+                                                    <li>Key personality traits and quirks</li>
+                                                    <li>Internal and external conflicts</li>
+                                                    <li>Character arc potential</li>
+                                                </ul>
+                                            </li>
+                                            <li>Plot development including:
+                                                <ul>
+                                                    <li>Inciting incident</li>
+                                                    <li>3-5 major plot points/turning points</li>
+                                                    <li>Central conflict</li>
+                                                    <li>Possible resolution approaches</li>
+                                                </ul>
+                                            </li>
+                                            <li>Setting/world-building elements:
+                                                <ul>
+                                                    <li>Time period and location details</li>
+                                                    <li>Unique aspects of this world</li>
+                                                    <li>Social/political/cultural elements that affect the story</li>
+                                                </ul>
+                                            </li>
+                                            <li>Thematic elements and deeper meaning potential</li>
+                                        </ol>
+                                        <p>After outlining these elements, suggest 2-3 different directions the story could take, each with a different tone (e.g., hopeful, tragic, ambiguous).</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Personal Use Cases -->
+                        <div class="use-case-card" data-category="personal">
+                            <div class="use-case-header">
+                                <h3>Personal Decision Framework</h3>
+                                <span class="category-tag personal-tag">Personal</span>
+                            </div>
+                            <div class="use-case-content">
+                                <p class="use-case-description">Create a structured framework to evaluate important life or career decisions from multiple perspectives.</p>
+                                
+                                <div class="use-case-example">
+                                    <div class="example-header">
+                                        <span class="example-label">Example Prompt</span>
+                                        <button class="copy-case-btn" data-case="decision">Copy</button>
+                                    </div>
+                                    <div class="example-content prompt-content">
+                                        <p>I'm trying to decide between [Option A] and [Option B] for [context of decision, e.g., career move, relocation, etc.]. Here are the key factors I'm considering:</p>
+                                        <ul>
+                                            <li>[Factor 1, e.g., financial implications]</li>
+                                            <li>[Factor 2, e.g., work-life balance]</li>
+                                            <li>[Factor 3, e.g., growth potential]</li>
+                                            <li>[Factor 4, e.g., family considerations]</li>
+                                        </ul>
+                                        <p>Please help me evaluate this decision by:</p>
+                                        <ol>
+                                            <li>Creating a comprehensive pros and cons table for each option</li>
+                                            <li>Rating each option on a scale of 1-10 for each of my key factors</li>
+                                            <li>Suggesting 3-5 important questions I should ask myself that I might be overlooking</li>
+                                            <li>Identifying any cognitive biases that might be influencing my decision</li>
+                                            <li>Providing a framework for making this decision that balances analytical and emotional considerations</li>
+                                        </ol>
+                                        <p>I'm not asking you to make the decision for me, but rather to help me think through it more clearly and thoroughly.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Image Generation Tips Section -->
+            <section id="image-generation" class="content-section">
+                <div class="container">
+                    <h2>Image Generation Tips</h2>
+                    
+                    <div class="section-intro">
+                        <p>Creating effective prompts for AI image generators requires a different approach than text prompts. These specialized systems have their own quirks and capabilities that you'll need to understand to get the best results.</p>
+                    </div>
+                    
+                    <div class="subsection">
+                        <h3>The Prompt Framework for Images</h3>
+                        <p>Just as with text prompts, having a structured approach to image generation can dramatically improve your results. Here's a framework that works well across most image generation platforms:</p>
+                        
+                        <div class="image-prompt-framework">
+                            <div class="framework-block">
+                                <h4>1. Subject</h4>
+                                <p>What is the main focus of your image? Be specific and detailed.</p>
+                                <div class="example-block">
+                                    <div class="example-label">Examples:</div>
+                                    <ul class="example-list">
+                                        <li>"A rustic cabin"</li>
+                                        <li>"A Siberian husky"</li>
+                                        <li>"A Victorian-era woman"</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="framework-block">
+                                <h4>2. Environment/Setting</h4>
+                                <p>Where is your subject located? What surrounds it?</p>
+                                <div class="example-block">
+                                    <div class="example-label">Examples:</div>
+                                    <ul class="example-list">
+                                        <li>"in a misty forest"</li>
+                                        <li>"on a frozen lake"</li>
+                                        <li>"in a sunlit garden with roses"</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="framework-block">
+                                <h4>3. Lighting & Atmosphere</h4>
+                                <p>How is the scene lit? What's the mood or time of day?</p>
+                                <div class="example-block">
+                                    <div class="example-label">Examples:</div>
+                                    <ul class="example-list">
+                                        <li>"during sunset with golden hour lighting"</li>
+                                        <li>"with dramatic side lighting"</li>
+                                        <li>"foggy morning atmosphere"</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="framework-block">
+                                <h4>4. Style & Medium</h4>
+                                <p>What artistic style or medium should the image emulate?</p>
+                                <div class="example-block">
+                                    <div class="example-label">Examples:</div>
+                                    <ul class="example-list">
+                                        <li>"watercolor painting"</li>
+                                        <li>"photorealistic digital art"</li>
+                                        <li>"in the style of Studio Ghibli"</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="framework-block">
+                                <h4>5. Technical Specifications</h4>
+                                <p>Add details about composition, camera settings, or render quality.</p>
+                                <div class="example-block">
+                                    <div class="example-label">Examples:</div>
+                                    <ul class="example-list">
+                                        <li>"ultra-detailed, 8K resolution"</li>
+                                        <li>"shallow depth of field"</li>
+                                        <li>"shot with a wide-angle lens"</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="image-example-container">
+                            <h4>Example: Putting It All Together</h4>
+                            <div class="image-example">
+                                <div class="prompt-section">
+                                    <div class="prompt-label">Basic Prompt:</div>
+                                    <div class="prompt-text">
+                                        <p>"A cabin in the woods"</p>
+                                    </div>
+                                </div>
+                                <div class="image-result">
+                                    <div class="placeholder-image basic-image">
+                                        <span class="image-note">Basic result will be generic</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="image-example enhanced">
+                                <div class="prompt-section">
+                                    <div class="prompt-label">Enhanced Prompt:</div>
+                                    <div class="prompt-text">
+                                        <p>"A rustic log cabin with a stone chimney in a misty pine forest, morning fog lingering between the trees, golden sunlight breaking through the canopy, cinematic lighting, photorealistic digital art, ultra-detailed, 8K, shallow depth of field"</p>
+                                    </div>
+                                    <button class="copy-prompt-btn" data-prompt="cabin">Copy Prompt</button>
+                                </div>
+                                <div class="image-result">
+                                    <div class="placeholder-image enhanced-image">
+                                        <span class="image-note">Enhanced result will be specific and atmospheric</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="subsection">
+                        <h3>Combining Multiple Concepts</h3>
+                        <p>One of the most powerful features of AI image generation is the ability to combine disparate concepts in creative ways. This is where you can move beyond what's possible with traditional art and photography.</p>
+                        
+                        <div class="combination-examples">
+                            <div class="combo-example">
+                                <h4>Concept Fusion</h4>
+                                <div class="prompt-text">
+                                    <p>"A library that's also a greenhouse, with bookshelves integrated among tropical plants, sunlight streaming through glass ceiling, academic steampunk style, detailed illustration"</p>
+                                    <button class="copy-prompt-btn" data-prompt="library">Copy Prompt</button>
+                                </div>
+                                <div class="combo-image">
+                                    <div class="placeholder-image fusion-image">
+                                        <span class="image-note">Concept Fusion Example</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="combo-example">
+                                <h4>Style Blending</h4>
+                                <div class="prompt-text">
+                                    <p>"Portrait of a samurai warrior, blend of traditional Japanese ukiyo-e woodblock print and modern cyberpunk aesthetics, neon lighting, highly detailed"</p>
+                                    <button class="copy-prompt-btn" data-prompt="samurai">Copy Prompt</button>
+                                </div>
+                                <div class="combo-image">
+                                    <div class="placeholder-image blend-image">
+                                        <span class="image-note">Style Blending Example</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tip-box highlight">
+                            <h4>Pro Tip: Weights and Emphasis</h4>
+                            <p>Some image generators allow you to emphasize certain aspects of your prompt using syntax like <code>(keyword)</code> or <code>keyword++</code> for increased emphasis, or <code>[keyword]</code> or <code>keyword--</code> for decreased emphasis.</p>
+                            <p>Example: "A portrait of a ((cybernetic)) [human] with glowing blue eyes" will emphasize the cybernetic aspects while de-emphasizing human characteristics.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="subsection">
+                        <h3>From Sketch to Rendered Image</h3>
+                        <p>Many image generation tools now support using your own sketches or reference images as a starting point, allowing you to guide the composition more precisely.</p>
+                        
+                        <div class="sketch-example">
+                            <div class="sketch-row">
+                                <div class="sketch-column">
+                                    <h4>Input Sketch</h4>
+                                    <div class="sketch-image">
+                                        <div class="placeholder-image sketch">
+                                            <span class="image-note">Simple Input Sketch</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="arrow">→</div>
+                                <div class="sketch-column">
+                                    <h4>AI Rendered Result</h4>
+                                    <div class="sketch-image">
+                                        <div class="placeholder-image rendered">
+                                            <span class="image-note">Detailed Rendered Output</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="prompt-for-sketch">
+                                <div class="prompt-label">Sketch-to-Image Prompt:</div>
+                                <div class="prompt-text">
+                                    <p>"Transform this sketch into a detailed fantasy character concept art. Medieval female warrior with ornate armor, auburn hair, forest background, digital painting style, highly detailed, professional concept art"</p>
+                                    <button class="copy-prompt-btn" data-prompt="sketch">Copy Prompt</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="best-practices-list">
+                            <h4>Best Practices for Sketch-to-Image:</h4>
+                            <ul>
+                                <li>Use clear, distinct lines in your sketch</li>
+                                <li>Focus on composition and basic forms rather than details</li>
+                                <li>Keep your sketch simple but ensure key elements are distinct</li>
+                                <li>Use color in your sketch if you want to guide the color palette</li>
+                                <li>Provide detailed text descriptions to fill in details not in the sketch</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="subsection">
+                        <h3>Platform-Specific Tips</h3>
+                        <p>Each image generation platform has its own strengths, limitations, and syntax. Here are some specific tips for popular platforms:</p>
+                        
+                        <div class="platform-tips">
+                            <div class="platform-tip-card">
+                                <h4>Midjourney</h4>
+                                <ul class="platform-tips-list">
+                                    <li>Use <code>--ar 16:9</code> to specify aspect ratio</li>
+                                    <li>Add <code>--stylize</code> or <code>--s</code> with a number from 0-1000 to control style intensity</li>
+                                    <li>Use <code>--chaos</code> with a value to increase randomness</li>
+                                    <li>Add <code>--v 6</code> (or current version) to use specific model versions</li>
+                                </ul>
+                                <div class="example-prompt">
+                                    <p><code>/imagine a futuristic city with floating gardens and antigravity transport, cyberpunk, detailed, vibrant colors --ar 16:9 --s 750</code></p>
+                                </div>
+                            </div>
+                            
+                            <div class="platform-tip-card">
+                                <h4>DALL-E 3</h4>
+                                <ul class="platform-tips-list">
+                                    <li>Be very detailed and specific in your descriptions</li>
+                                    <li>Use natural language rather than keyword lists</li>
+                                    <li>Specify "high resolution" or "detailed" for better quality</li>
+                                    <li>Mention camera angles, lighting, and composition</li>
+                                </ul>
+                                <div class="example-prompt">
+                                    <p>"Create a high-resolution image of an underwater research station built into a coral reef. The structure has large curved glass windows and is illuminated from within, creating a warm glow that contrasts with the cool blue of the surrounding ocean. Marine life swims around the station, and a researcher in a sleek diving suit approaches the main entrance. The scene is shot from a slightly elevated angle to show both the station and the vast ocean beyond."</p>
+                                </div>
+                            </div>
+                            
+                            <div class="platform-tip-card">
+                                <h4>Stable Diffusion</h4>
+                                <ul class="platform-tips-list">
+                                    <li>Use prompt weighting with <code>(text)</code> or <code>[text]</code> syntax</li>
+                                    <li>Specify models with unique strengths (e.g., Dreamshaper, RealisticVision)</li>
+                                    <li>Use negative prompts to specify what you don't want</li>
+                                    <li>Adjust CFG scale to balance prompt adherence vs. creativity</li>
+                                </ul>
+                                <div class="example-prompt">
+                                    <p>"(Hyperrealistic:1.2) portrait of an elderly (lighthouse keeper:1.4), weathered face, detailed wrinkles, salt and pepper beard, wearing a cable-knit sweater, stormy sea background, dramatic lighting, Hasselblad, 85mm, f/2.8, professional photography
+                                    
+Negative prompt: deformed, ugly, cartoon, anime, 3d, painting, drawing, unrealistic</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="subsection">
+                        <h3>Troubleshooting Common Issues</h3>
+                        <p>When your image generations aren't coming out as expected, try these fixes for common problems:</p>
+                        
+                        <div class="troubleshooting-grid">
+                            <div class="troubleshooting-card">
+                                <h4>Problem: Generic or Bland Results</h4>
+                                <div class="solution">
+                                    <h5>Solution:</h5>
+                                    <ul>
+                                        <li>Add more specific details to your prompt</li>
+                                        <li>Include artistic style references</li>
+                                        <li>Specify lighting and atmosphere</li>
+                                        <li>Add technical specifications (8K, detailed, etc.)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="troubleshooting-card">
+                                <h4>Problem: Anatomical Errors</h4>
+                                <div class="solution">
+                                    <h5>Solution:</h5>
+                                    <ul>
+                                        <li>Explicitly mention "correct anatomy" in your prompt</li>
+                                        <li>Use negative prompts: "deformed, extra limbs, bad anatomy"</li>
+                                        <li>Request "professional character design" or "anatomical correctness"</li>
+                                        <li>Reference particular artists known for good anatomy</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="troubleshooting-card">
+                                <h4>Problem: Text Rendering Issues</h4>
+                                <div class="solution">
+                                    <h5>Solution:</h5>
+                                    <ul>
+                                        <li>Most image generators struggle with text</li>
+                                        <li>Keep requested text very short (1-3 words)</li>
+                                        <li>Specify "clear, legible text" in your prompt</li>
+                                        <li>Consider adding text in post-processing instead</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="troubleshooting-card">
+                                <h4>Problem: Too Much Stylization</h4>
+                                <div class="solution">
+                                    <h5>Solution:</h5>
+                                    <ul>
+                                        <li>Request "photorealistic" or "photograph"</li>
+                                        <li>Reduce stylization parameters if available</li>
+                                        <li>Specify camera details (e.g., "shot on Canon 5D")</li>
+                                        <li>Include "8K resolution, highly detailed" for realism</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Best Practices Overview Section -->
+            <section id="best-practices" class="content-section">
+                <div class="container">
+                    <h2>Best Practices Overview</h2>
+                    
+                    <div class="section-intro">
+                        <p>This section brings together key insights from across this guide into a comprehensive set of best practices. These recommendations will help you use AI tools effectively, responsibly, and creatively.</p>
+                    </div>
+                    
+                    <div class="best-practices-container">
+                        <div class="practice-category">
+                            <h3>Understanding the Tool</h3>
+                            <div class="practice-cards">
+                                <div class="practice-card">
+                                    <div class="practice-icon tool-icon"></div>
+                                    <h4>Know Your Model's Capabilities</h4>
+                                    <p>Different AI models have different strengths, limitations, and knowledge cutoff dates. Familiarize yourself with what your chosen model can and cannot do.</p>
+                                    <div class="practice-action">
+                                        <h5>Action Steps:</h5>
+                                        <ul>
+                                            <li>Review the model's documentation</li>
+                                            <li>Test the model with simple tasks first</li>
+                                            <li>Stay updated on new model versions</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="practice-card">
+                                    <div class="practice-icon verify-icon"></div>
+                                    <h4>Verify Information</h4>
+                                    <p>AI can provide plausible-sounding but incorrect information. Always verify factual claims, especially for important decisions or sensitive topics.</p>
+                                    <div class="practice-action">
+                                        <h5>Action Steps:</h5>
+                                        <ul>
+                                            <li>Cross-check AI responses with reliable sources</li>
+                                            <li>Ask the AI to cite sources where possible</li>
+                                            <li>Use research tools when accuracy is critical</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="practice-category">
+                            <h3>Prompting Basics</h3>
+                            <div class="practice-cards">
+                                <div class="practice-card">
+                                    <div class="practice-icon specific-icon"></div>
+                                    <h4>Be Specific and Clear</h4>
+                                    <p>Vague prompts lead to generic responses. The more specific and detailed your prompt, the better the AI can tailor its response to your needs.</p>
+                                    <div class="practice-action">
+                                        <h5>Action Steps:</h5>
+                                        <ul>
+                                            <li>Include relevant context and background</li>
+                                            <li>Specify your goals and expectations</li>
+                                            <li>Be explicit about format, tone, and style</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="practice-card">
+                                    <div class="practice-icon structure-icon"></div>
+                                    <h4>Use Structured Frameworks</h4>
+                                    <p>Organizing your prompts with frameworks like RTCF (Role, Task, Context, Format) leads to more consistent and useful results.</p>
+                                    <div class="practice-action">
+                                        <h5>Action Steps:</h5>
+                                        <ul>
+                                            <li>Choose a framework that fits your task</li>
+                                            <li>Include all relevant components</li>
+                                            <li>Maintain consistent structure across similar tasks</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="practice-category">
+                            <h3>Iteration and Refinement</h3>
+                            <div class="practice-cards">
+                                <div class="practice-card">
+                                    <div class="practice-icon iterate-icon"></div>
+                                    <h4>Embrace Iterative Improvement</h4>
+                                    <p>Don't expect perfect results from your first prompt. Use follow-up questions and refinements to guide the AI toward better outputs.</p>
+                                    <div class="practice-action">
+                                        <h5>Action Steps:</h5>
+                                        <ul>
+                                            <li>Review initial responses critically</li>
+                                            <li>Ask for revisions with specific guidance</li>
+                                            <li>Build on partial successes</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="practice-card">
+                                    <div class="practice-icon feedback-icon"></div>
+                                    <h4>Provide Constructive Feedback</h4>
+                                    <p>AI systems learn from your feedback. Clearly communicate what works and what doesn't to improve future interactions.</p>
+                                    <div class="practice-action">
+                                        <h5>Action Steps:</h5>
+                                        <ul>
+                                            <li>Be specific about what needs improvement</li>
+                                            <li>Explain why certain outputs don't meet your needs</li>
+                                            <li>Acknowledge when the AI gets things right</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="practice-category">
+                            <h3>Effective Tool Usage</h3>
+                            <div class="practice-cards">
+                                <div class="practice-card">
+                                    <div class="practice-icon input-icon"></div>
+                                    <h4>Leverage Multiple Input Types</h4>
+                                    <p>Modern AI systems support text, images, documents, voice, and more. Using the right input type for your task can dramatically improve results.</p>
+                                    <div class="practice-action">
+                                        <h5>Action Steps:</h5>
+                                        <ul>
+                                            <li>Upload relevant documents for context</li>
+                                            <li>Include images when discussing visual concepts</li>
+                                            <li>Use voice mode for natural conversations</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="practice-card">
+                                    <div class="practice-icon task-icon"></div>
+                                    <h4>Match the Tool to the Task</h4>
+                                    <p>Choose the right tool for each specific job. General-purpose AI is versatile, but specialized tools often perform better for specific tasks.</p>
+                                    <div class="practice-action">
+                                        <h5>Action Steps:</h5>
+                                        <ul>
+                                            <li>Use specialized image generators for visual content</li>
+                                            <li>Try code-specific models for programming tasks</li>
+                                            <li>Consider domain-specific tools for specialized work</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="practice-category">
+                            <h3>Caution & Judgment</h3>
+                            <div class="practice-cards">
+                                <div class="practice-card">
+                                    <div class="practice-icon caution-icon"></div>
+                                    <h4>Maintain Human Oversight</h4>
+                                    <p>AI should assist your thinking, not replace it. Always apply critical judgment to AI outputs, especially for important decisions.</p>
+                                    <div class="practice-action">
+                                        <h5>Action Steps:</h5>
+                                        <ul>
+                                            <li>Review AI suggestions before implementing them</li>
+                                            <li>Consider AI outputs as advice, not commands</li>
+                                            <li>Maintain final decision-making authority</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="practice-card">
+                                    <div class="practice-icon ethics-icon"></div>
+                                    <h4>Use AI Ethically</h4>
+                                    <p>Consider the ethical implications of your AI use, including privacy, copyright, bias, and potential impacts on others.</p>
+                                    <div class="practice-action">
+                                        <h5>Action Steps:</h5>
+                                        <ul>
+                                            <li>Respect intellectual property and give credit</li>
+                                            <li>Be transparent about AI use when appropriate</li>
+                                            <li>Consider the broader impacts of AI-generated content</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="key-takeaways">
+                        <h3>Key Takeaways</h3>
+                        <div class="takeaways-grid">
+                            <div class="takeaway">
+                                <div class="takeaway-number">1</div>
+                                <p>AI is a powerful assistant, not a replacement for human judgment and expertise</p>
+                            </div>
+                            <div class="takeaway">
+                                <div class="takeaway-number">2</div>
+                                <p>The quality of your prompts directly impacts the quality of AI responses</p>
+                            </div>
+                            <div class="takeaway">
+                                <div class="takeaway-number">3</div>
+                                <p>Iteration and refinement are essential parts of the AI workflow</p>
+                            </div>
+                            <div class="takeaway">
+                                <div class="takeaway-number">4</div>
+                                <p>Different tasks require different tools, models, and approaches</p>
+                            </div>
+                            <div class="takeaway">
+                                <div class="takeaway-number">5</div>
+                                <p>Ethical considerations should guide all AI use</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="next-steps">
+                        <h3>Next Steps in Your AI Journey</h3>
+                        <p>As AI tools continue to evolve rapidly, the most important skill is adaptability. Stay curious, experiment with new features and techniques, and share your discoveries with others.</p>
+                        <p>Remember that effective AI use is as much about understanding your own needs and thought processes as it is about understanding the technology. The best results come from thoughtful collaboration between human and machine intelligence.</p>
+                        <p>We hope this guide has given you a solid foundation for making AI a valuable part of your workflow. Now it's time to apply these practices to your own unique challenges and opportunities.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- About Me Section -->
+            <section id="about-me" class="content-section">
+                <div class="container">
+                    <h2>About Me</h2>
+                    
+                    <div class="about-section">
+                        <div class="profile-area">
+                            <img src="public/logo_vertical.png" alt="Justin Nikolaus" class="profile-image">
+                            <div class="profile-info">
+                                <h3>Justin Nikolaus</h3>
+                                <p>I'm a technology leader and AI specialist with over 15 years of experience in software development, product management, and AI integration. I help organizations understand and leverage AI technologies to solve real business problems and create new opportunities.</p>
+                                <p>My work focuses on making AI approachable and practical for professionals across all industries. I believe that AI should be a tool that enhances human capabilities rather than replacing them, and I'm passionate about teaching others how to use these powerful tools effectively.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bio-section">
+                            <h3>Professional Background</h3>
+                            <p>I've worked with organizations ranging from startups to Fortune 500 companies, helping them develop and implement AI strategies that deliver tangible results. My experience spans multiple industries including technology, healthcare, finance, and education.</p>
+                            <p>As an AI educator and consultant, I've trained thousands of professionals on practical AI use, focusing on real-world applications rather than theoretical concepts. My approach emphasizes hands-on learning and immediate application of AI tools to solve everyday business challenges.</p>
+                            <p>Prior to my current role, I served as Head of AI Product at a leading tech company, where I led the development of AI-powered solutions that are now used by millions of people worldwide.</p>
+                        </div>
+                        
+                        <div class="expertise-area">
+                            <div class="expertise-card">
+                                <h4>Speaking Topics</h4>
+                                <ul>
+                                    <li>Practical AI for Business Professionals</li>
+                                    <li>Prompt Engineering Masterclass</li>
+                                    <li>AI Integration Strategies</li>
+                                    <li>Future of Work in the AI Era</li>
+                                    <li>Ethical AI Implementation</li>
+                                </ul>
+                            </div>
+                            <div class="expertise-card">
+                                <h4>Technical Expertise</h4>
+                                <ul>
+                                    <li>Large Language Models</li>
+                                    <li>Prompt Engineering</li>
+                                    <li>AI Product Development</li>
+                                    <li>Natural Language Processing</li>
+                                    <li>Computer Vision Applications</li>
+                                </ul>
+                            </div>
+                            <div class="expertise-card">
+                                <h4>Industries Served</h4>
+                                <ul>
+                                    <li>Technology & SaaS</li>
+                                    <li>Healthcare & Life Sciences</li>
+                                    <li>Financial Services</li>
+                                    <li>Education & E-Learning</li>
+                                    <li>Manufacturing & Logistics</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="booking-section" id="book">
+                            <h3>Book Me to Speak</h3>
+                            <p>I'm available for keynote presentations, workshops, and corporate training sessions on practical AI implementation, prompt engineering, and AI strategy. My talks combine actionable insights with engaging delivery to ensure your audience leaves with both inspiration and practical knowledge they can apply immediately.</p>
+                            <a href="mailto:contact@practicalaiguide.com" class="booking-button">Contact for Booking</a>
+                            <div class="contact-info">
+                                <p>For speaking inquiries, please contact: <a href="mailto:speaking@practicalaiguide.com">speaking@practicalaiguide.com</a></p>
+                            </div>
+                            <div class="social-links">
+                                <a href="#" class="social-link" aria-label="LinkedIn"><span class="social-icon">in</span></a>
+                                <a href="#" class="social-link" aria-label="Twitter"><span class="social-icon">𝕏</span></a>
+                                <a href="#" class="social-link" aria-label="YouTube"><span class="social-icon">▶</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- About the Talk Section -->
+            <section id="about-talk" class="content-section">
+                <div class="container">
+                    <h2>About the Practical AI Talk</h2>
+                    
+                    <div class="about-section">
+                        <div class="talk-info">
+                            <h3>What This Talk Covers</h3>
+                            <p>The Practical AI talk is designed to bridge the gap between AI hype and practical application. Rather than focusing on theoretical concepts or future possibilities, this presentation gives you actionable strategies and techniques you can apply immediately to enhance your productivity and solve real-world problems.</p>
+                            
+                            <div class="talk-topics">
+                                <h4>Key Topics Covered:</h4>
+                                <div class="topic-list">
+                                    <div class="topic-item">
+                                        <div class="topic-icon">1</div>
+                                        <div class="topic-text">Understanding when (and when not) to use AI tools</div>
+                                    </div>
+                                    <div class="topic-item">
+                                        <div class="topic-icon">2</div>
+                                        <div class="topic-text">Choosing the right AI platform for your specific needs</div>
+                                    </div>
+                                    <div class="topic-item">
+                                        <div class="topic-icon">3</div>
+                                        <div class="topic-text">Mastering prompt engineering techniques</div>
+                                    </div>
+                                    <div class="topic-item">
+                                        <div class="topic-icon">4</div>
+                                        <div class="topic-text">Using frameworks to structure your AI interactions</div>
+                                    </div>
+                                    <div class="topic-item">
+                                        <div class="topic-icon">5</div>
+                                        <div class="topic-text">Leveraging multiple input types (documents, images, voice)</div>
+                                    </div>
+                                    <div class="topic-item">
+                                        <div class="topic-icon">6</div>
+                                        <div class="topic-text">Implementing AI-powered workflows in your daily tasks</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="audience-section">
+                            <h3>Who This Talk Is For</h3>
+                            <p>This talk is designed for professionals who want to move beyond basic AI use and develop more sophisticated, effective approaches to working with AI tools. The content is accessible to non-technical audiences while still providing depth for those with more technical backgrounds.</p>
+                            
+                            <div class="audience-groups">
+                                <div class="audience-group">
+                                    <h4>Business Professionals</h4>
+                                    <p>Learn to enhance your productivity and decision-making processes with AI-powered workflows.</p>
+                                </div>
+                                <div class="audience-group">
+                                    <h4>Knowledge Workers</h4>
+                                    <p>Discover how to leverage AI to enhance research, writing, and information processing.</p>
+                                </div>
+                                <div class="audience-group">
+                                    <h4>Team Leaders</h4>
+                                    <p>Gain insights on how to effectively integrate AI tools into your team's workflows.</p>
+                                </div>
+                                <div class="audience-group">
+                                    <h4>Creatives</h4>
+                                    <p>Learn prompt techniques that enhance creative processes rather than replacing them.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="talk-info">
+                            <h3>Practical Outcomes</h3>
+                            <p>After attending this talk, participants will be able to:</p>
+                            <ul>
+                                <li>Craft more effective prompts that generate better AI responses</li>
+                                <li>Choose the right AI tools for specific tasks and use cases</li>
+                                <li>Apply proven frameworks to structure their AI interactions</li>
+                                <li>Implement AI-enhanced workflows that save time and improve output quality</li>
+                                <li>Identify appropriate use cases where AI can provide the most value</li>
+                                <li>Avoid common pitfalls and misconceptions about AI capabilities</li>
+                            </ul>
+                            <p>The emphasis throughout is on practical application rather than theory, ensuring that every participant walks away with techniques they can implement immediately.</p>
+                        </div>
+                        
+                        <div class="booking-section">
+                            <h3>Bring This Talk to Your Organization</h3>
+                            <p>This talk can be customized for different audience sizes, technical levels, and industry contexts. It's available as a keynote presentation (45-60 minutes) or as an extended workshop (2-4 hours) with hands-on exercises.</p>
+                            <a href="mailto:workshops@practicalaiguide.com" class="booking-button">Request Workshop Information</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Justin Nikolaus. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

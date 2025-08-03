@@ -828,16 +828,15 @@ Here’s a focused list of **AI best practices for beginners**, especially relev
 
 ---
 
+## About Me 
+
+Justin Nikolaus is an AI design specialist with more than ten years of experience bringing emerging technology into things people actually use. His work at Microsoft and Amazon brought AI into Windows, Alexa, and even a voice interface designed for NASA astronauts heading to the moon. Now part of Amazon’s advanced AI Design Systems team, he prototypes next-generation human-AI interfaces. Known for explaining complex AI concepts for business, design, and technical audiences alike, Justin brings a grounded, hands-on perspective to the promises and limits of today's tools. He lives in Seattle with his wife and two children, where AI supports everything from managing his smart home to generating personalized bedtime stories.
 
 
+---
 
+## About Practical AI Talk 
 
+Practical AI offers a clear, non-technical introduction to artificial intelligence for anyone looking to understand and apply AI in a practical way, whether at work or in everyday life. It is designed for professionals across all roles as well as individuals exploring AI for personal use. The session explains what AI is and what it is not, why it has become so prominent, and how tools like ChatGPT and other generative AI platforms can support writing, summarizing, brainstorming, and managing everyday tasks.
 
-### 5. **"Emergency AI Kit"** (Bonus slide)
-
-- Stuck on a project: "Help me think through this problem from 5 different angles"
-- Need inspiration: "Give me 20 creative approaches to [challenge]"
-- Writer's block: "Here's what I'm trying to say: [messy thoughts]. Help me say it clearly"
-- Decision paralysis: "Help me create a decision matrix for these options"
-
-
+The session outlines both the benefits and the limitations of today’s AI tools and provides straightforward guidance on how to use them effectively while avoiding common mistakes. It includes an overview of the different types of AI tools available and offers best practices for integrating them into common workflows. Attendees will leave with practical tips, curated resources, and a foundational understanding that can be applied across a wide range of situations. The talk concludes with a Q&A session where participants can ask specific questions based on their own needs and interests.
