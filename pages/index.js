@@ -117,7 +117,7 @@ export default function Home() {
 
       <footer>
         <div className="container">
-          <p>&copy; 2025 Justin Nikolaus. All rights reserved.</p>
+          <p>&copy; Justin Nikolaus. All rights reserved.</p>
         </div>
       </footer>
     </>
