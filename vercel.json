@@ -20,7 +20,7 @@
       ]
     },
     {
-      "source": "/(.+\\.(js|css))",
+      "source": "/:path*\\.(?:js|css)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -29,7 +29,7 @@
       ]
     },
     {
-      "source": "/(.+\\.(jpg|jpeg|png|gif|ico|svg))",
+      "source": "/:path*\\.(?:jpg|jpeg|png|gif|ico|svg)",
       "headers": [
         {
           "key": "Cache-Control",
